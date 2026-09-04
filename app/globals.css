@@ -133,9 +133,10 @@ img, video { max-width: 100%; }
 .dual-metrics strong { font-size: 21px; letter-spacing: -.04em; }
 .dual-metrics span { font-size: 9px; color: #8a949c; text-transform: uppercase; letter-spacing: .08em; }
 .project-nyuray img { position: absolute; left: 40px; right: 40px; bottom: 34px; width: calc(100% - 80px); height: 190px; object-fit: cover; border-radius: 15px; filter: saturate(.65); }
-.project-radar { background: #d8fbf1; }
-.project-radar > p { color: #41615a; }
-.radar-chart { margin-top: 72px; display: grid; gap: 18px; }
+.project-radar { grid-column: span 2; min-height: 520px; background: #d8fbf1; }
+.project-radar > p { max-width: 530px; color: #41615a; }
+.project-radar .project-heading-link { max-width: 720px; }
+.radar-chart { position: absolute; top: 190px; right: 40px; width: min(40%, 500px); margin-top: 0; display: grid; gap: 18px; }
 .radar-chart div { display: grid; grid-template-columns: 70px 1fr 48px; align-items: center; gap: 11px; color: #507068; font-size: 10px; text-transform: uppercase; }
 .radar-chart i { height: 16px; width: calc(var(--score) * 100%); border-radius: 2px; background: rgba(12,38,32,.19); position: relative; }
 .radar-chart div:last-child i { background: #0c3a31; }
@@ -359,13 +360,14 @@ footer h2 { margin-top: 40px; font-size: clamp(48px, 5.5vw, 82px); }
   .feature-visual { min-height: 360px; padding: 12px; }
   .image-caption { display: none; }
   .project-grid { grid-template-columns: 1fr; }
-  .project-card, .project-neural { grid-column: auto; min-height: 590px; padding: 27px 24px; }
+  .project-card, .project-neural, .project-radar { grid-column: auto; min-height: 590px; padding: 27px 24px; }
   .project-card h3 { margin-top: 38px; }
   .project-heading-link { grid-template-columns: minmax(0, 1fr) 40px; gap: 12px; }
   .project-heading-link > span { width: 40px; height: 40px; margin-top: 38px; }
   .neural-field { left: 14px; right: 14px; bottom: 14px; height: 310px; }
   .neural-field canvas { height: 255px; }
   .project-nyuray img { left: 24px; right: 24px; width: calc(100% - 48px); }
+  .project-radar .radar-chart { position: static; width: auto; margin-top: 72px; }
   .project-radar small { left: 24px; }
   .project-nav { width: calc(100% - 30px); height: 68px; }
   .project-nav nav { display: none; }

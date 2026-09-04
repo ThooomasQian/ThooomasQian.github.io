@@ -14,6 +14,7 @@ test("GitHub Pages output is pre-rendered and canonical", async () => {
   assert.match(html, /conference-poster-session\.jpg/);
   assert.match(html, /AFTER IEEE ICC · SCOTLAND/);
   assert.match(html, /WILLIAM J\. STOLZE AWARD · NYU TANDON/);
+  assert.ok(html.indexOf("4D Point Splatting") < html.indexOf("Generative Geometry"));
   assert.match(html, /https:\/\/thooomasqian\.github\.io\/og\.png/);
   assert.doesNotMatch(html, /<!--app-html-->/);
 });

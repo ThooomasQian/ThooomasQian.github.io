@@ -35,7 +35,7 @@ export type ResearchProject = {
   links: readonly ProjectLink[];
 };
 
-export const projects: readonly ResearchProject[] = [
+const projectRecords: readonly ResearchProject[] = [
   {
     slug: "horama",
     index: "01",
@@ -78,7 +78,7 @@ export const projects: readonly ResearchProject[] = [
   },
   {
     slug: "geometry-completion",
-    index: "02",
+    index: "03",
     kicker: "GENERATIVE GEOMETRY",
     title: "Complete what the camera cannot see.",
     lede: "A visibility-aware, ray-anchored completion system recovers occluded objects and persistent walls while treating measured free space as a hard physical constraint.",
@@ -116,7 +116,7 @@ export const projects: readonly ResearchProject[] = [
   },
   {
     slug: "pdp-diffusion",
-    index: "03",
+    index: "04",
     kicker: "RT-ANCHORED PDP DIFFUSION",
     title: "Generate the residual. Keep the physics.",
     lede: "A leakage-controlled conditional diffusion framework corrects ray-traced power-delay profiles while retaining site geometry, absolute delay, and frequency context.",
@@ -157,7 +157,7 @@ export const projects: readonly ResearchProject[] = [
   },
   {
     slug: "nyuray-intelligence",
-    index: "04",
+    index: "05",
     kicker: "CALIBRATION + RIS",
     title: "Site-specific radio intelligence.",
     lede: "Two linked research threads make deterministic propagation models more useful: sparse learned calibration for path power, and fast joint optimization of beams, RIS phase, and deployment.",
@@ -196,7 +196,7 @@ export const projects: readonly ResearchProject[] = [
   },
   {
     slug: "radar-splatting",
-    index: "05",
+    index: "02",
     kicker: "4D POINT SPLATTING",
     title: "Differentiable radar rendering from monocular video.",
     lede: "A differentiable renderer converts articulated motion from monocular video into 77 GHz MIMO radar returns, then fits scattering and velocity parameters directly to measurements.",
@@ -230,6 +230,18 @@ export const projects: readonly ResearchProject[] = [
     links: [],
   },
 ];
+
+export const projects: readonly ResearchProject[] = [
+  "horama",
+  "radar-splatting",
+  "geometry-completion",
+  "pdp-diffusion",
+  "nyuray-intelligence",
+].map((slug) => {
+  const project = projectRecords.find((item) => item.slug === slug);
+  if (!project) throw new Error(`Missing project record: ${slug}`);
+  return project;
+});
 
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);

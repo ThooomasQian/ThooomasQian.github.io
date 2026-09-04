@@ -48,6 +48,7 @@ test("server-renders the complete academic portfolio", async () => {
   assert.match(html, /Guanyue-Qian-CV\.pdf/);
   assert.match(html, /thooomasqian\.github\.io\/og\.png/);
   assert.doesNotMatch(html, />View project</);
+  assert.ok(html.indexOf("4D Point Splatting") < html.indexOf("Generative Geometry"));
 });
 
 test("ships the essential portfolio assets", async () => {
@@ -78,6 +79,8 @@ test("server-renders representative project detail routes", async () => {
   assert.match(horama, /property="og:title" content="From a phone scan to a radio-ready digital twin\. — Guanyue Qian"/);
   assert.match(horama, /name="twitter:description" content="HoRAMA turns an RGB-D walkthrough/);
   assert.match(horama, /thooomasqian\.github\.io\/media\/horama-pointcloud\.png/);
+  assert.match(horama, /NEXT PROJECT · (?:<!-- -->)?02/);
+  assert.match(horama, /Differentiable radar rendering from monocular video/);
   assert.match(radar, /Differentiable radar rendering from monocular video/);
   assert.match(radar, /DOPPLER/);
   assert.match(radar, /<title>Differentiable radar rendering from monocular video\. — Guanyue Qian<\/title>/);

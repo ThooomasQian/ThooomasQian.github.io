@@ -73,28 +73,8 @@ export default function Home() {
         </article>
 
         <div className="project-grid">
-          <article className="project-card project-neural reveal">
-            <div className="project-topline"><span>02</span><span>Generative Geometry · In Progress</span></div>
-            <a className="project-heading-link" href="/research/geometry-completion/" aria-label="Open Diffusion models for what cameras cannot see"><h3>Diffusion models for what cameras cannot see.</h3><span aria-hidden="true">↗</span></a>
-            <p>A visibility-aware generative system completes missing walls and structures while preserving the geometry needed for downstream ray tracing.</p>
-            <NeuralField />
-          </article>
-          <article className="project-card project-pdp reveal">
-            <div className="project-topline"><span>03</span><span>RT-Anchored PDP Diffusion</span></div>
-            <a className="project-heading-link" href="/research/pdp-diffusion/" aria-label="Open Generate the residual, keep the physics"><h3>Generate the residual,<br />keep the physics.</h3><span aria-hidden="true">↗</span></a>
-            <p>A leakage-controlled diffusion framework corrects calibrated ray-traced power-delay profiles across seven bands and five scenes.</p>
-            <div className="pdp-metric"><strong>57%</strong><span>reduction in masked PDP RMSE<br />23.09 → 9.94 dB</span></div>
-            <img src="/media/pdp-rays.jpg" alt="Top-down ray-tracing paths in an indoor environment" width={615} height={1200} />
-          </article>
-          <article className="project-card project-nyuray reveal">
-            <div className="project-topline"><span>04</span><span>NYURay · Calibration + RIS</span></div>
-            <a className="project-heading-link" href="/research/nyuray-intelligence/" aria-label="Open Site-specific radio intelligence"><h3>Site-specific radio intelligence.</h3><span aria-hidden="true">↗</span></a>
-            <p>SPARC learns sparse path corrections; PRIMO jointly optimizes precoding, RIS phase, and placement without training.</p>
-            <div className="dual-metrics"><div><strong>18.74 → 4.74</strong><span>dB path-power RMSE</span></div><div><strong>≈100×</strong><span>faster optimization</span></div></div>
-            <img src="/media/rt-scene.jpg" alt="Top-down NYU office ray-tracing scene" width={1800} height={904} />
-          </article>
           <article className="project-card project-radar reveal">
-            <div className="project-topline"><span>05</span><span>4D Point Splatting · Cornell Tech</span></div>
+            <div className="project-topline"><span>02</span><span>4D Point Splatting · Cornell Tech</span></div>
             <a className="project-heading-link" href="/research/radar-splatting/" aria-label="Open Differentiable radar rendering from monocular video"><h3>Differentiable radar rendering from monocular video.</h3><span aria-hidden="true">↗</span></a>
             <p>A renderer that fits scattering parameters and per-joint velocities to measured 77 GHz MIMO radar returns through gradient descent.</p>
             <div className="radar-chart" aria-label="Doppler centroid correlation improved from 0.647 to 0.784">
@@ -102,6 +82,26 @@ export default function Home() {
               <div><span>Ours</span><i style={{ "--score": ".784" } as CSSProperties} /><b>0.784</b></div>
             </div>
             <small>DOPPLER-CENTROID CORRELATION · HELD-OUT HUPR</small>
+          </article>
+          <article className="project-card project-neural reveal">
+            <div className="project-topline"><span>03</span><span>Generative Geometry · In Progress</span></div>
+            <a className="project-heading-link" href="/research/geometry-completion/" aria-label="Open Diffusion models for what cameras cannot see"><h3>Diffusion models for what cameras cannot see.</h3><span aria-hidden="true">↗</span></a>
+            <p>A visibility-aware generative system completes missing walls and structures while preserving the geometry needed for downstream ray tracing.</p>
+            <NeuralField />
+          </article>
+          <article className="project-card project-pdp reveal">
+            <div className="project-topline"><span>04</span><span>RT-Anchored PDP Diffusion</span></div>
+            <a className="project-heading-link" href="/research/pdp-diffusion/" aria-label="Open Generate the residual, keep the physics"><h3>Generate the residual,<br />keep the physics.</h3><span aria-hidden="true">↗</span></a>
+            <p>A leakage-controlled diffusion framework corrects calibrated ray-traced power-delay profiles across seven bands and five scenes.</p>
+            <div className="pdp-metric"><strong>57%</strong><span>reduction in masked PDP RMSE<br />23.09 → 9.94 dB</span></div>
+            <img src="/media/pdp-rays.jpg" alt="Top-down ray-tracing paths in an indoor environment" width={615} height={1200} />
+          </article>
+          <article className="project-card project-nyuray reveal">
+            <div className="project-topline"><span>05</span><span>NYURay · Calibration + RIS</span></div>
+            <a className="project-heading-link" href="/research/nyuray-intelligence/" aria-label="Open Site-specific radio intelligence"><h3>Site-specific radio intelligence.</h3><span aria-hidden="true">↗</span></a>
+            <p>SPARC learns sparse path corrections; PRIMO jointly optimizes precoding, RIS phase, and placement without training.</p>
+            <div className="dual-metrics"><div><strong>18.74 → 4.74</strong><span>dB path-power RMSE</span></div><div><strong>≈100×</strong><span>faster optimization</span></div></div>
+            <img src="/media/rt-scene.jpg" alt="Top-down NYU office ray-tracing scene" width={1800} height={904} />
           </article>
         </div>
       </section>
