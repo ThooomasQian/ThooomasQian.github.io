@@ -258,8 +258,8 @@ a.publication:hover { background: rgba(255,255,255,.035); padding-left: 16px; pa
 .skills-band span { flex: 1; min-width: 112px; text-align: center; padding: 17px 12px; background: #fff; border: 1px solid #e0e5e8; border-radius: 10px; font: 650 9px/1 ui-monospace, monospace; letter-spacing: .08em; color: #65717c; }
 
 .about-section { background: #09131f; color: white; padding: 120px 48px; overflow: hidden; }
-.about-grid { width: min(1280px, 100%); margin: 0 auto; display: grid; grid-template-columns: 1.1fr .78fr .78fr; grid-template-rows: 260px 380px; gap: 22px; }
-.about-copy { grid-row: span 2; padding: 36px 60px 30px 0; display: flex; flex-direction: column; }
+.about-grid { width: min(1280px, 100%); margin: 0 auto; display: grid; grid-template-columns: 1.1fr .78fr .78fr; grid-template-rows: 260px 380px 310px 360px; gap: 22px; }
+.about-copy { grid-column: 1; grid-row: 1 / span 2; padding: 36px 60px 30px 0; display: flex; flex-direction: column; }
 .about-copy h2 { margin: 46px 0 30px; }
 .about-copy > p { color: #8b9aa7; font-size: 16px; line-height: 1.7; max-width: 490px; }
 .about-links { display: flex; gap: 12px; margin-top: auto; }
@@ -269,11 +269,20 @@ a.publication:hover { background: rgba(255,255,255,.035); padding-left: 16px; pa
 .photo:hover img { transform: scale(1.025); }
 .photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(transparent 60%, rgba(0,0,0,.58)); pointer-events: none; }
 .photo figcaption { position: absolute; z-index: 1; bottom: 17px; left: 17px; color: rgba(255,255,255,.76); font: 600 8px/1 ui-monospace, monospace; letter-spacing: .11em; }
-.photo-one { grid-row: span 2; }
+.photo-one { grid-column: 2; grid-row: 1 / span 2; }
 .photo-one img { object-position: 52% center; }
+.photo-two { grid-column: 3; grid-row: 1; }
 .photo-two img { object-position: center 40%; }
-.photo-three { grid-column: 3; }
+.photo-three { grid-column: 3; grid-row: 2; }
 .photo-three img { object-position: center; }
+.photo-four { grid-column: 1 / span 2; grid-row: 3; }
+.photo-four img { object-position: center 54%; }
+.photo-five { grid-column: 3; grid-row: 3 / span 2; }
+.photo-five img { object-position: center 48%; }
+.photo-six { grid-column: 1; grid-row: 4; }
+.photo-six img { object-position: center; }
+.photo-seven { grid-column: 2; grid-row: 4; }
+.photo-seven img { object-position: center 45%; }
 
 .photography-section { padding: 128px 0 90px; overflow: hidden; background: #f7f8f9; }
 .photography-head { display: grid; grid-template-columns: .55fr 1.08fr .72fr; gap: 54px; align-items: end; margin-bottom: 66px; }
@@ -314,11 +323,16 @@ footer h2 { margin-top: 40px; font-size: clamp(48px, 5.5vw, 82px); }
   .feature-visual { min-height: 480px; }
   .film-section { grid-template-columns: 1fr; }
   .film-copy > p:last-child { margin-top: 28px; max-width: 640px; }
-  .about-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto 430px 300px; }
+  .about-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto 430px 300px 320px 300px 360px; }
   .about-copy { grid-column: span 2; grid-row: auto; padding-right: 0; }
   .about-links { margin-top: 38px; }
-  .photo-one { grid-row: span 2; }
-  .photo-three { grid-column: 2; }
+  .photo-one { grid-column: 1; grid-row: 2 / span 2; }
+  .photo-two { grid-column: 2; grid-row: 2; }
+  .photo-three { grid-column: 2; grid-row: 3; }
+  .photo-four { grid-column: 1 / span 2; grid-row: 4; }
+  .photo-five { grid-column: 1; grid-row: 5 / span 2; }
+  .photo-six { grid-column: 2; grid-row: 5; }
+  .photo-seven { grid-column: 2; grid-row: 6; }
   .photography-head { grid-template-columns: .45fr 1fr; }
   .photography-head > p:last-child { grid-column: 2; }
 }
@@ -388,9 +402,10 @@ footer h2 { margin-top: 40px; font-size: clamp(48px, 5.5vw, 82px); }
   .pub-meta { display: none; }
   .timeline-item { grid-template-columns: 1fr; gap: 20px; }
   .about-section { padding: 84px 18px; }
-  .about-grid { grid-template-columns: 1fr; grid-template-rows: auto 520px 280px 330px; }
-  .about-copy { grid-column: auto; }
-  .photo-one, .photo-three { grid-column: auto; grid-row: auto; }
+  .about-grid { display: flex; flex-direction: column; }
+  .about-copy { grid-column: auto; min-height: 430px; }
+  .photo-one, .photo-two, .photo-three, .photo-four, .photo-five, .photo-six, .photo-seven { grid-column: auto; grid-row: auto; height: 320px; }
+  .photo-one, .photo-five, .photo-seven { height: 500px; }
   .photography-section { padding: 84px 0 66px; }
   .photography-head { grid-template-columns: 1fr; gap: 30px; margin-bottom: 42px; }
   .photography-head > p:last-child { grid-column: auto; }

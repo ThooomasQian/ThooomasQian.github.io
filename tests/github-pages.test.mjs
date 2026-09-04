@@ -12,6 +12,8 @@ test("GitHub Pages output is pre-rendered and canonical", async () => {
   assert.match(html, /EDUCATION \+ EXPERIENCE/);
   assert.match(html, /PHOTOGRAPHY · FIELD NOTES/);
   assert.match(html, /conference-poster-session\.jpg/);
+  assert.match(html, /AFTER IEEE ICC · SCOTLAND/);
+  assert.match(html, /WILLIAM J\. STOLZE AWARD · NYU TANDON/);
   assert.match(html, /https:\/\/thooomasqian\.github\.io\/og\.png/);
   assert.doesNotMatch(html, /<!--app-html-->/);
 });
@@ -25,6 +27,10 @@ test("GitHub Pages output includes interactive code and essential media", async 
     access(new URL("media/guanyue-qian.jpg", outputRoot)),
     access(new URL("media/horama-pointcloud.png", outputRoot)),
     access(new URL("media/conference-poster-session.jpg", outputRoot)),
+    access(new URL("media/about-channel-measurement.jpg", outputRoot)),
+    access(new URL("media/about-equipment-test.jpg", outputRoot)),
+    access(new URL("media/about-sounder-check.jpg", outputRoot)),
+    access(new URL("media/about-stolze-award.jpg", outputRoot)),
     access(new URL("media/photography/670f7dcd39d84d5c87fe2ab75c9a5d.jpg", outputRoot)),
   ]);
 

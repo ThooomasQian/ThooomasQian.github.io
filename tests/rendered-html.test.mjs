@@ -42,6 +42,9 @@ test("server-renders the complete academic portfolio", async () => {
   assert.match(html, /EDUCATION \+ EXPERIENCE/);
   assert.match(html, /PHOTOGRAPHY · FIELD NOTES/);
   assert.match(html, /Collecting light/);
+  assert.match(html, /AFTER IEEE ICC · SCOTLAND/);
+  assert.match(html, /CHANNEL SOUNDER · EQUIPMENT CHECK/);
+  assert.match(html, /WILLIAM J\. STOLZE AWARD · NYU TANDON/);
   assert.match(html, /Guanyue-Qian-CV\.pdf/);
   assert.match(html, /thooomasqian\.github\.io\/og\.png/);
   assert.doesNotMatch(html, />View project</);
@@ -56,6 +59,10 @@ test("ships the essential portfolio assets", async () => {
     access(new URL("public/media/fr1-measurement.mp4", projectRoot)),
     access(new URL("public/media/horama-pointcloud.png", projectRoot)),
     access(new URL("public/media/conference-poster-session.jpg", projectRoot)),
+    access(new URL("public/media/about-channel-measurement.jpg", projectRoot)),
+    access(new URL("public/media/about-equipment-test.jpg", projectRoot)),
+    access(new URL("public/media/about-sounder-check.jpg", projectRoot)),
+    access(new URL("public/media/about-stolze-award.jpg", projectRoot)),
     access(new URL("public/media/photography/670f7dcd39d84d5c87fe2ab75c9a5d.jpg", projectRoot)),
   ]);
 });

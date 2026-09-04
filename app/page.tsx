@@ -148,9 +148,13 @@ export default function Home() {
       <section className="about-section" id="about">
         <div className="about-grid">
           <div className="about-copy reveal"><p className="section-kicker light">BEYOND THE LAB</p><h2>Curiosity is<br />a field practice.</h2><p>I build robots, photograph places, and carry research questions into the world. The same habit connects them: notice the structure, then make it tangible.</p><div className="about-links"><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="mailto:gq2032@nyu.edu">Email ↗</a></div></div>
-          <figure className="photo photo-one reveal"><img src="/media/travel-road.jpg" alt="Guanyue on a mountain road in Europe" width={1800} height={1200} /><figcaption>FIELD NOTES · EUROPE, 2026</figcaption></figure>
+          <figure className="photo photo-one reveal"><img src="/media/travel-road.jpg" alt="Guanyue on a mountain road in Scotland after IEEE ICC" width={1800} height={1200} /><figcaption>AFTER IEEE ICC · SCOTLAND</figcaption></figure>
           <figure className="photo photo-two reveal"><img src="/media/conference-poster-session.jpg" alt="Guanyue Qian and collaborators at the HoRAMA conference poster session" width={1800} height={1350} /><figcaption>HORAMA · CONFERENCE POSTER SESSION</figcaption></figure>
-          <figure className="photo photo-three reveal"><img src="/media/travel-drone.jpg" alt="Guanyue carrying a drone at dusk in the mountains" width={1800} height={1200} /><figcaption>AERIAL PERCEPTION</figcaption></figure>
+          <figure className="photo photo-three reveal"><img src="/media/travel-drone.jpg" alt="Guanyue carrying a drone while traveling in Switzerland" width={1800} height={1200} /><figcaption>TRAVEL NOTES · SWITZERLAND</figcaption></figure>
+          <figure className="photo photo-four reveal"><img src="/media/about-channel-measurement.jpg" alt="Guanyue Qian and a collaborator preparing channel-measurement hardware" width={1800} height={1350} loading="lazy" /><figcaption>CHANNEL MEASUREMENT · EQUIPMENT PREP</figcaption></figure>
+          <figure className="photo photo-five reveal"><img src="/media/about-equipment-test.jpg" alt="Guanyue Qian testing RF connections on channel-sounding equipment" width={1350} height={1800} loading="lazy" /><figcaption>CHANNEL MEASUREMENT · RF SYSTEM TEST</figcaption></figure>
+          <figure className="photo photo-six reveal"><img src="/media/about-sounder-check.jpg" alt="Guanyue Qian and collaborators after testing the channel sounder" width={1800} height={1350} loading="lazy" /><figcaption>CHANNEL SOUNDER · EQUIPMENT CHECK</figcaption></figure>
+          <figure className="photo photo-seven reveal"><img src="/media/about-stolze-award.jpg" alt="Guanyue Qian holding the William J. Stolze Award at NYU Tandon" width={1350} height={1800} loading="lazy" /><figcaption>WILLIAM J. STOLZE AWARD · NYU TANDON</figcaption></figure>
         </div>
       </section>
 
