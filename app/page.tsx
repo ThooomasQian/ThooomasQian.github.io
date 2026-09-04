@@ -1,4 +1,4 @@
-import Image from "next/image";
+/* eslint-disable @next/next/no-img-element */
 import type { CSSProperties } from "react";
 import { NeuralField } from "./NeuralField";
 import { RayTracer } from "./RayTracer";
@@ -29,7 +29,7 @@ export default function Home() {
             <a className="text-link" href="mailto:gq2032@nyu.edu">gq2032@nyu.edu <span>↗</span></a>
           </div>
           <div className="hero-meta" aria-label="Profile summary">
-            <Image src="/media/guanyue-qian.jpg" alt="Guanyue Qian" width={800} height={800} sizes="43px" priority unoptimized />
+            <img src="/media/guanyue-qian.jpg" alt="Guanyue Qian" width={800} height={800} />
             <div><strong>NYU WIRELESS</strong><span>Brooklyn, New York</span></div>
             <div><strong>3.96 / 4.00</strong><span>B.S. Electrical Engineering</span></div>
           </div>
@@ -66,7 +66,7 @@ export default function Home() {
             <a className="project-link" href="https://ieeexplore.ieee.org/document/11587993" target="_blank" rel="noreferrer">Read the ICC paper <span>↗</span></a>
           </div>
           <div className="feature-visual">
-            <Image src="/media/horama-pipeline.jpg" alt="HoRAMA pipeline from RGB-D capture to channel validation" width={1900} height={1081} sizes="(max-width: 1050px) 100vw, 58vw" unoptimized />
+            <img src="/media/horama-pipeline.jpg" alt="HoRAMA pipeline from RGB-D capture to channel validation" width={1900} height={1081} />
             <div className="image-caption"><span>RGB-D → MATERIAL-AWARE 3D → RAY TRACING</span><span>NYU MAKERSPACE</span></div>
           </div>
         </article>
@@ -83,14 +83,14 @@ export default function Home() {
             <h3>Generate the residual,<br />keep the physics.</h3>
             <p>A leakage-controlled diffusion framework corrects calibrated ray-traced power-delay profiles across seven bands and five scenes.</p>
             <div className="pdp-metric"><strong>57%</strong><span>reduction in masked PDP RMSE<br />23.09 → 9.94 dB</span></div>
-            <Image src="/media/pdp-rays.jpg" alt="Top-down ray-tracing paths in an indoor environment" width={615} height={1200} sizes="(max-width: 760px) 100vw, 42vw" unoptimized />
+            <img src="/media/pdp-rays.jpg" alt="Top-down ray-tracing paths in an indoor environment" width={615} height={1200} />
           </article>
           <article className="project-card project-nyuray reveal">
             <div className="project-topline"><span>04</span><span>NYURay · Calibration + RIS</span></div>
             <h3>Site-specific radio intelligence.</h3>
             <p>SPARC learns sparse path corrections; PRIMO jointly optimizes precoding, RIS phase, and placement without training.</p>
             <div className="dual-metrics"><div><strong>18.74 → 4.74</strong><span>dB path-power RMSE</span></div><div><strong>≈100×</strong><span>faster optimization</span></div></div>
-            <Image src="/media/rt-scene.jpg" alt="Top-down NYU office ray-tracing scene" width={1800} height={904} sizes="(max-width: 760px) 100vw, 42vw" unoptimized />
+            <img src="/media/rt-scene.jpg" alt="Top-down NYU office ray-tracing scene" width={1800} height={904} />
           </article>
           <article className="project-card project-radar reveal">
             <div className="project-topline"><span>05</span><span>4D Point Splatting · Cornell Tech</span></div>
@@ -147,9 +147,9 @@ export default function Home() {
       <section className="about-section" id="about">
         <div className="about-grid">
           <div className="about-copy reveal"><p className="section-kicker light">BEYOND THE LAB</p><h2>Curiosity is<br />a field practice.</h2><p>I build robots, photograph places, and carry research questions into the world. The same habit connects them: notice the structure, then make it tangible.</p><div className="about-links"><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="mailto:gq2032@nyu.edu">Email ↗</a></div></div>
-          <figure className="photo photo-one reveal"><Image src="/media/travel-road.jpg" alt="Guanyue on a mountain road in Europe" width={1800} height={1200} sizes="(max-width: 760px) 100vw, 40vw" unoptimized /><figcaption>FIELD NOTES · EUROPE, 2026</figcaption></figure>
-          <figure className="photo photo-two reveal"><Image src="/media/travel-snow.jpg" alt="Guanyue in a snowy mountain landscape" width={1017} height={1400} sizes="(max-width: 760px) 100vw, 28vw" unoptimized /><figcaption>BETWEEN CONFERENCES</figcaption></figure>
-          <figure className="photo photo-three reveal"><Image src="/media/travel-drone.jpg" alt="Guanyue carrying a drone at dusk in the mountains" width={1800} height={1200} sizes="(max-width: 760px) 100vw, 28vw" unoptimized /><figcaption>AERIAL PERCEPTION</figcaption></figure>
+          <figure className="photo photo-one reveal"><img src="/media/travel-road.jpg" alt="Guanyue on a mountain road in Europe" width={1800} height={1200} /><figcaption>FIELD NOTES · EUROPE, 2026</figcaption></figure>
+          <figure className="photo photo-two reveal"><img src="/media/travel-snow.jpg" alt="Guanyue in a snowy mountain landscape" width={1017} height={1400} /><figcaption>BETWEEN CONFERENCES</figcaption></figure>
+          <figure className="photo photo-three reveal"><img src="/media/travel-drone.jpg" alt="Guanyue carrying a drone at dusk in the mountains" width={1800} height={1200} /><figcaption>AERIAL PERCEPTION</figcaption></figure>
         </div>
       </section>
 

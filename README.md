@@ -21,3 +21,14 @@ pnpm test
 ```
 
 The production build is emitted to `dist/` through vinext and is configured for OpenAI Sites hosting.
+
+## GitHub Pages
+
+The public portfolio is also configured for `https://thooomasqian.github.io/`.
+Pushes to `main` run the Pages workflow, generate a pre-rendered static build,
+verify its essential content and assets, and deploy it automatically.
+
+```bash
+pnpm build:github
+pnpm test:github
+```
