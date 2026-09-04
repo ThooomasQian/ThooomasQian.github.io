@@ -2,6 +2,7 @@
 import type { CSSProperties } from "react";
 import { HoramaPointCloud } from "./HoramaPointCloud";
 import { NeuralField } from "./NeuralField";
+import { photographs } from "./photography";
 import { publications } from "./publications";
 
 export default function Home() {
@@ -66,44 +67,40 @@ export default function Home() {
             <div className="feature-links"><a className="project-link" href="/research/horama/">Explore the project <span>→</span></a><a className="project-paper-link" href="https://ieeexplore.ieee.org/document/11587993" target="_blank" rel="noreferrer">ICC paper ↗</a></div>
           </div>
           <div className="feature-visual">
-            <img src="/media/horama-pipeline.jpg" alt="HoRAMA pipeline from RGB-D capture to channel validation" width={1900} height={1081} />
-            <div className="image-caption"><span>RGB-D → MATERIAL-AWARE 3D → RAY TRACING</span><span>NYU MAKERSPACE</span></div>
+            <img src="/media/horama-pointcloud.png" alt="Oblique RGB-D point cloud of the NYU MakerSpace captured for HoRAMA" width={1800} height={1080} />
+            <div className="image-caption"><span>2.03M RGB-D POINTS · PHONE CAPTURE</span><span>NYU MAKERSPACE</span></div>
           </div>
         </article>
 
         <div className="project-grid">
           <article className="project-card project-neural reveal">
             <div className="project-topline"><span>02</span><span>Generative Geometry · In Progress</span></div>
-            <h3>Diffusion models for what cameras cannot see.</h3>
+            <a className="project-heading-link" href="/research/geometry-completion/" aria-label="Open Diffusion models for what cameras cannot see"><h3>Diffusion models for what cameras cannot see.</h3><span aria-hidden="true">↗</span></a>
             <p>A visibility-aware generative system completes missing walls and structures while preserving the geometry needed for downstream ray tracing.</p>
-            <a className="card-detail-link" href="/research/geometry-completion/">View project <span>→</span></a>
             <NeuralField />
           </article>
           <article className="project-card project-pdp reveal">
             <div className="project-topline"><span>03</span><span>RT-Anchored PDP Diffusion</span></div>
-            <h3>Generate the residual,<br />keep the physics.</h3>
+            <a className="project-heading-link" href="/research/pdp-diffusion/" aria-label="Open Generate the residual, keep the physics"><h3>Generate the residual,<br />keep the physics.</h3><span aria-hidden="true">↗</span></a>
             <p>A leakage-controlled diffusion framework corrects calibrated ray-traced power-delay profiles across seven bands and five scenes.</p>
             <div className="pdp-metric"><strong>57%</strong><span>reduction in masked PDP RMSE<br />23.09 → 9.94 dB</span></div>
-            <a className="card-detail-link" href="/research/pdp-diffusion/">View project <span>→</span></a>
             <img src="/media/pdp-rays.jpg" alt="Top-down ray-tracing paths in an indoor environment" width={615} height={1200} />
           </article>
           <article className="project-card project-nyuray reveal">
             <div className="project-topline"><span>04</span><span>NYURay · Calibration + RIS</span></div>
-            <h3>Site-specific radio intelligence.</h3>
+            <a className="project-heading-link" href="/research/nyuray-intelligence/" aria-label="Open Site-specific radio intelligence"><h3>Site-specific radio intelligence.</h3><span aria-hidden="true">↗</span></a>
             <p>SPARC learns sparse path corrections; PRIMO jointly optimizes precoding, RIS phase, and placement without training.</p>
             <div className="dual-metrics"><div><strong>18.74 → 4.74</strong><span>dB path-power RMSE</span></div><div><strong>≈100×</strong><span>faster optimization</span></div></div>
-            <a className="card-detail-link" href="/research/nyuray-intelligence/">View project <span>→</span></a>
             <img src="/media/rt-scene.jpg" alt="Top-down NYU office ray-tracing scene" width={1800} height={904} />
           </article>
           <article className="project-card project-radar reveal">
             <div className="project-topline"><span>05</span><span>4D Point Splatting · Cornell Tech</span></div>
-            <h3>Differentiable radar rendering from monocular video.</h3>
+            <a className="project-heading-link" href="/research/radar-splatting/" aria-label="Open Differentiable radar rendering from monocular video"><h3>Differentiable radar rendering from monocular video.</h3><span aria-hidden="true">↗</span></a>
             <p>A renderer that fits scattering parameters and per-joint velocities to measured 77 GHz MIMO radar returns through gradient descent.</p>
             <div className="radar-chart" aria-label="Doppler centroid correlation improved from 0.647 to 0.784">
               <div><span>Baseline</span><i style={{ "--score": ".647" } as CSSProperties} /><b>0.647</b></div>
               <div><span>Ours</span><i style={{ "--score": ".784" } as CSSProperties} /><b>0.784</b></div>
             </div>
-            <a className="card-detail-link" href="/research/radar-splatting/">View project <span>→</span></a>
             <small>DOPPLER-CENTROID CORRELATION · HELD-OUT HUPR</small>
           </article>
         </div>
@@ -152,9 +149,26 @@ export default function Home() {
         <div className="about-grid">
           <div className="about-copy reveal"><p className="section-kicker light">BEYOND THE LAB</p><h2>Curiosity is<br />a field practice.</h2><p>I build robots, photograph places, and carry research questions into the world. The same habit connects them: notice the structure, then make it tangible.</p><div className="about-links"><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="mailto:gq2032@nyu.edu">Email ↗</a></div></div>
           <figure className="photo photo-one reveal"><img src="/media/travel-road.jpg" alt="Guanyue on a mountain road in Europe" width={1800} height={1200} /><figcaption>FIELD NOTES · EUROPE, 2026</figcaption></figure>
-          <figure className="photo photo-two reveal"><img src="/media/travel-snow.jpg" alt="Guanyue in a snowy mountain landscape" width={1017} height={1400} /><figcaption>BETWEEN CONFERENCES</figcaption></figure>
+          <figure className="photo photo-two reveal"><img src="/media/conference-poster-session.jpg" alt="Guanyue Qian and collaborators at the HoRAMA conference poster session" width={1800} height={1350} /><figcaption>HORAMA · CONFERENCE POSTER SESSION</figcaption></figure>
           <figure className="photo photo-three reveal"><img src="/media/travel-drone.jpg" alt="Guanyue carrying a drone at dusk in the mountains" width={1800} height={1200} /><figcaption>AERIAL PERCEPTION</figcaption></figure>
         </div>
+      </section>
+
+      <section className="photography-section" aria-labelledby="photography-title">
+        <div className="photography-head section-shell reveal">
+          <p className="section-kicker">PHOTOGRAPHY · FIELD NOTES</p>
+          <h2 id="photography-title">Collecting light<br />between projects.</h2>
+          <p>Long exposures, aerial geometry, and moments of motion—an ongoing visual notebook from fieldwork and travel.</p>
+        </div>
+        <div className="photography-marquee" aria-label="Selected photography; the strip pauses on hover">
+          <div className="photography-track">
+            {[...photographs, ...photographs].map((photo, index) => {
+              const duplicate = index >= photographs.length;
+              return <figure className={`photography-frame ${photo.shape}`} key={`${photo.src}-${index}`} aria-hidden={duplicate || undefined}><img src={photo.src} alt={duplicate ? "" : photo.alt} loading="lazy" /><figcaption><span>{String((index % photographs.length) + 1).padStart(2, "0")}</span>{photo.caption}</figcaption></figure>;
+            })}
+          </div>
+        </div>
+        <p className="photography-hint section-shell">HOVER TO PAUSE · SWIPE ON MOBILE</p>
       </section>
 
       <footer>

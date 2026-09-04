@@ -24,6 +24,7 @@ export type ResearchProject = {
   accent: string;
   image?: string;
   imageAlt?: string;
+  imageFit?: "contain" | "cover";
   metrics: readonly ProjectMetric[];
   overview: readonly string[];
   question: string;
@@ -84,8 +85,6 @@ export const projects: readonly ResearchProject[] = [
     status: "Research in progress",
     period: "2026—PRESENT",
     accent: "#20bfae",
-    image: "/media/geometry-completion-comparison.png",
-    imageAlt: "Point-cloud comparison of traditional HoRAMA input, proposed completed input, and handcrafted ground truth",
     metrics: [
       { value: "0.741", label: "cross-domain object F1" },
       { value: "3.09 cm", label: "object Chamfer distance" },
@@ -124,8 +123,9 @@ export const projects: readonly ResearchProject[] = [
     status: "Under review · IEEE T-WC",
     period: "2026",
     accent: "#8a78ff",
-    image: "/media/diffusion-wireless.jpg",
-    imageAlt: "Conditional diffusion process for correcting wireless power-delay profiles",
+    image: "/media/pdp-rays.jpg",
+    imageAlt: "Ray paths through a reconstructed indoor scene used as a physical PDP anchor",
+    imageFit: "cover",
     metrics: [
       { value: "401", label: "quality-gated links" },
       { value: "7 bands", label: "3.7–142 GHz" },
@@ -234,4 +234,3 @@ export const projects: readonly ResearchProject[] = [
 export function getProject(slug: string) {
   return projects.find((project) => project.slug === slug);
 }
-

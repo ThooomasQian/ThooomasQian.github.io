@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element, @next/next/no-html-link-for-pages */
 import type { CSSProperties } from "react";
+import { NeuralField } from "./NeuralField";
 import type { ResearchProject } from "./projects";
 import { projects } from "./projects";
 
@@ -22,8 +23,8 @@ export function ProjectDetail({ project }: { project: ResearchProject }) {
           <h1>{project.title}</h1>
           <div className="project-detail-lede"><p>{project.lede}</p><div><span>{project.status}</span><span>{project.period}</span></div></div>
         </div>
-        <div className={`project-hero-media ${project.image ? "has-image" : "radar-media"}`}>
-          {project.image ? <img src={project.image} alt={project.imageAlt ?? ""} /> : <RadarStudyVisual />}
+        <div className={`project-hero-media ${project.image ? "has-image" : project.slug === "geometry-completion" ? "geometry-media" : "radar-media"} ${project.imageFit === "cover" ? "cover-image" : ""}`}>
+          {project.image ? <img src={project.image} alt={project.imageAlt ?? ""} /> : project.slug === "geometry-completion" ? <NeuralField /> : <RadarStudyVisual />}
           <div className="project-media-label"><span>GUANYUE QIAN · NYU WIRELESS</span><span>{project.kicker}</span></div>
         </div>
       </section>

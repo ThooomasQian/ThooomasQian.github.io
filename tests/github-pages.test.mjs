@@ -10,6 +10,8 @@ test("GitHub Pages output is pre-rendered and canonical", async () => {
   assert.match(html, /Making the invisible/);
   assert.match(html, /HoRAMA/);
   assert.match(html, /EDUCATION \+ EXPERIENCE/);
+  assert.match(html, /PHOTOGRAPHY · FIELD NOTES/);
+  assert.match(html, /conference-poster-session\.jpg/);
   assert.match(html, /https:\/\/thooomasqian\.github\.io\/og\.png/);
   assert.doesNotMatch(html, /<!--app-html-->/);
 });
@@ -22,6 +24,8 @@ test("GitHub Pages output includes interactive code and essential media", async 
     access(new URL("media/fr1-measurement.mp4", outputRoot)),
     access(new URL("media/guanyue-qian.jpg", outputRoot)),
     access(new URL("media/horama-pointcloud.png", outputRoot)),
+    access(new URL("media/conference-poster-session.jpg", outputRoot)),
+    access(new URL("media/photography/670f7dcd39d84d5c87fe2ab75c9a5d.jpg", outputRoot)),
   ]);
 
   const scriptFiles = await import("node:fs/promises").then(({ readdir }) =>
