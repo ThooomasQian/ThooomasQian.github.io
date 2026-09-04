@@ -1,7 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
+/* eslint-disable @next/next/no-img-element, @next/next/no-html-link-for-pages */
 import type { CSSProperties } from "react";
+import { HoramaPointCloud } from "./HoramaPointCloud";
 import { NeuralField } from "./NeuralField";
-import { RayTracer } from "./RayTracer";
 import { publications } from "./publications";
 
 export default function Home() {
@@ -34,9 +34,9 @@ export default function Home() {
             <div><strong>3.96 / 4.00</strong><span>B.S. Electrical Engineering</span></div>
           </div>
         </div>
-        <div className="hero-demo" aria-label="Interactive wireless ray-tracing demonstration">
-          <div className="demo-head"><span>LIVE PROPAGATION FIELD</span><span className="live-dot">SIMULATING</span></div>
-          <RayTracer />
+        <div className="hero-demo" aria-label="Interactive HoRAMA point-cloud demonstration">
+          <div className="demo-head"><span>HORAMA / LIVE RGB-D CLOUD</span><span className="live-dot">RECONSTRUCTING</span></div>
+          <HoramaPointCloud />
         </div>
       </section>
 
@@ -63,7 +63,7 @@ export default function Home() {
               <div><strong>4–6 cm</strong><span>planar accuracy</span></div>
               <div><strong>2.3 / 3.8 dB</strong><span>PL RMSE at 6.75 / 16.95 GHz</span></div>
             </div>
-            <a className="project-link" href="https://ieeexplore.ieee.org/document/11587993" target="_blank" rel="noreferrer">Read the ICC paper <span>↗</span></a>
+            <div className="feature-links"><a className="project-link" href="/research/horama/">Explore the project <span>→</span></a><a className="project-paper-link" href="https://ieeexplore.ieee.org/document/11587993" target="_blank" rel="noreferrer">ICC paper ↗</a></div>
           </div>
           <div className="feature-visual">
             <img src="/media/horama-pipeline.jpg" alt="HoRAMA pipeline from RGB-D capture to channel validation" width={1900} height={1081} />
@@ -76,6 +76,7 @@ export default function Home() {
             <div className="project-topline"><span>02</span><span>Generative Geometry · In Progress</span></div>
             <h3>Diffusion models for what cameras cannot see.</h3>
             <p>A visibility-aware generative system completes missing walls and structures while preserving the geometry needed for downstream ray tracing.</p>
+            <a className="card-detail-link" href="/research/geometry-completion/">View project <span>→</span></a>
             <NeuralField />
           </article>
           <article className="project-card project-pdp reveal">
@@ -83,6 +84,7 @@ export default function Home() {
             <h3>Generate the residual,<br />keep the physics.</h3>
             <p>A leakage-controlled diffusion framework corrects calibrated ray-traced power-delay profiles across seven bands and five scenes.</p>
             <div className="pdp-metric"><strong>57%</strong><span>reduction in masked PDP RMSE<br />23.09 → 9.94 dB</span></div>
+            <a className="card-detail-link" href="/research/pdp-diffusion/">View project <span>→</span></a>
             <img src="/media/pdp-rays.jpg" alt="Top-down ray-tracing paths in an indoor environment" width={615} height={1200} />
           </article>
           <article className="project-card project-nyuray reveal">
@@ -90,6 +92,7 @@ export default function Home() {
             <h3>Site-specific radio intelligence.</h3>
             <p>SPARC learns sparse path corrections; PRIMO jointly optimizes precoding, RIS phase, and placement without training.</p>
             <div className="dual-metrics"><div><strong>18.74 → 4.74</strong><span>dB path-power RMSE</span></div><div><strong>≈100×</strong><span>faster optimization</span></div></div>
+            <a className="card-detail-link" href="/research/nyuray-intelligence/">View project <span>→</span></a>
             <img src="/media/rt-scene.jpg" alt="Top-down NYU office ray-tracing scene" width={1800} height={904} />
           </article>
           <article className="project-card project-radar reveal">
@@ -100,6 +103,7 @@ export default function Home() {
               <div><span>Baseline</span><i style={{ "--score": ".647" } as CSSProperties} /><b>0.647</b></div>
               <div><span>Ours</span><i style={{ "--score": ".784" } as CSSProperties} /><b>0.784</b></div>
             </div>
+            <a className="card-detail-link" href="/research/radar-splatting/">View project <span>→</span></a>
             <small>DOPPLER-CENTROID CORRELATION · HELD-OUT HUPR</small>
           </article>
         </div>
