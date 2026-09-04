@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://guanyue-qian.fuzzy-chick-5933.chatgpt.site"),
+  metadataBase: new URL("https://guanyue-qian.qgy06442.chatgpt.site"),
   title: "Guanyue Qian — Wireless Intelligence & 3D Vision",
   description: "Research portfolio of Guanyue Qian at NYU WIRELESS, working across wireless propagation, machine learning, and 3D reconstruction.",
   alternates: { canonical: "/" },

@@ -10,7 +10,7 @@ async function render() {
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request("https://guanyue-qian.fuzzy-chick-5933.chatgpt.site/", {
+    new Request("https://guanyue-qian.qgy06442.chatgpt.site/", {
       headers: { accept: "text/html" },
     }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
@@ -30,7 +30,7 @@ test("server-renders the complete academic portfolio", async () => {
   assert.match(html, /RT-Anchored PDP Diffusion/);
   assert.match(html, /EDUCATION \+ EXPERIENCE/);
   assert.match(html, /Guanyue-Qian-CV\.pdf/);
-  assert.match(html, /guanyue-qian\.fuzzy-chick-5933\.chatgpt\.site\/og\.png/);
+  assert.match(html, /guanyue-qian\.qgy06442\.chatgpt\.site\/og\.png/);
 });
 
 test("ships the essential portfolio assets", async () => {
