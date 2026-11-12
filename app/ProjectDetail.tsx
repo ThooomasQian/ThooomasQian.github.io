@@ -9,55 +9,54 @@ export function ProjectDetail({ project }: { project: ResearchProject }) {
   const primaryAlt = project.imageAlt ?? project.gallery[0]?.alt ?? "Research project visualization";
 
   return (
-    <main className="project-page">
-      <header className="site-header project-header">
-        <a className="site-identity" href="/"><strong>Guanyue Qian</strong><span>Research portfolio</span></a>
-        <nav aria-label="Project navigation"><a href="/#research">Research</a><a href="/#publications">Publications</a><a href="/#education">Background</a></nav>
-        <a className="header-cv" href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">Curriculum Vitae</a>
-      </header>
+    <>
+      <nav className="top-nav">
+        <div className="nav-inner">
+          <a className="brand" href="/">Guanyue Qian</a>
+          <div className="nav-links"><a href="/#about">About</a><a href="/#research">Research</a><a href="/#publications">Publications</a><a href="/#honors">Honors</a><a href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">CV</a></div>
+        </div>
+      </nav>
 
-      <article>
-        <section className="project-hero">
-          <div className="project-hero-copy">
-            <p className="project-kicker"><span>{project.index}</span>{project.kicker}</p>
-            <h1>{project.title}</h1>
-            <p className="project-lede">{project.lede}</p>
-            <dl className="project-facts">
-              <div><dt>Status</dt><dd>{project.status}</dd></div>
-              <div><dt>Period</dt><dd>{project.period}</dd></div>
-              <div><dt>Researcher</dt><dd>Guanyue Qian · NYU</dd></div>
-            </dl>
-          </div>
-          <figure className="project-primary-figure"><img src={primaryImage} alt={primaryAlt} /><figcaption>{project.kicker} · project overview</figcaption></figure>
+      <main className="academic-main detail-main">
+        <section className="detail-hero">
+          <p className="detail-kicker">{project.index} · {project.kicker}</p>
+          <h1>{project.title}</h1>
+          <p className="detail-lede">{project.lede}</p>
+          <div className="detail-meta"><span>{project.status}</span><span>{project.period}</span></div>
+          <figure className="detail-cover"><img src={primaryImage} alt={primaryAlt} /><figcaption>{project.kicker} · project overview</figcaption></figure>
         </section>
 
-        <section className="project-metrics" aria-label="Project highlights">{project.metrics.map((metric) => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</section>
-
-        <section className="project-content project-overview">
-          <div className="content-label"><span>01</span><h2>Research context</h2></div>
-          <div className="content-body">{project.overview.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<blockquote><span>Research question</span>{project.question}</blockquote></div>
+        <section>
+          <h2>Highlights</h2>
+          <div className="detail-metrics">{project.metrics.map((metric) => <div key={metric.label}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div>
         </section>
 
-        <section className="project-content project-method">
-          <div className="content-label"><span>02</span><h2>Method</h2></div>
-          <div className="method-list">{project.method.map((step, index) => <article key={step.title}><span>{String(index + 1).padStart(2, "0")}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></article>)}</div>
+        <section>
+          <h2>Research Context</h2>
+          <div className="detail-copy">{project.overview.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}<p><strong>Research question:</strong> {project.question}</p></div>
         </section>
 
-        {project.gallery.length > 0 && <section className="project-gallery" aria-label="Project figures">{project.gallery.map((item) => <figure key={item.src}><img src={item.src} alt={item.alt} /><figcaption>{item.caption}</figcaption></figure>)}</section>}
-
-        <section className="project-content project-results">
-          <div className="content-label"><span>03</span><h2>Results</h2></div>
-          <ol className="result-list">{project.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}</ol>
+        <section>
+          <h2>Method</h2>
+          <ol className="detail-method">{project.method.map((step) => <li key={step.title}><strong>{step.title}</strong><span>{step.text}</span></li>)}</ol>
         </section>
 
-        <section className="project-content project-resources">
-          <div className="content-label"><span>04</span><h2>Resources</h2></div>
-          <div><div className="tool-list">{project.tools.map((tool) => <span key={tool}>{tool}</span>)}</div>{project.links.length > 0 && <div className="resource-links">{project.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>{link.label} ↗</a>)}</div>}</div>
-        </section>
-      </article>
+        {project.gallery.length > 0 && <section><h2>Figures</h2><div className={`gallery g${Math.min(project.gallery.length, 4)}`}>{project.gallery.map((item) => <figure key={item.src}><img src={item.src} alt={item.alt} /><figcaption>{item.caption}</figcaption></figure>)}</div></section>}
 
-      <a className="next-project" href={`/research/${nextProject.slug}/`}><span>Next project · {nextProject.index}</span><strong>{nextProject.title}</strong><i aria-hidden="true">→</i></a>
-      <footer className="project-footer"><span>© 2026 Guanyue Qian</span><a href="mailto:gq2032@nyu.edu">gq2032@nyu.edu</a></footer>
-    </main>
+        <section>
+          <h2>Results</h2>
+          <ul className="plain">{project.outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}</ul>
+        </section>
+
+        <section>
+          <h2>Resources</h2>
+          <p className="tool-line"><strong>Tools:</strong> {project.tools.join(" · ")}</p>
+          <div className="plinks">{project.links.map((link) => <a href={link.href} target="_blank" rel="noreferrer" key={link.href}>[{link.label}]</a>)}</div>
+        </section>
+
+        <section className="next-detail"><strong>Next project:</strong> <a href={`/research/${nextProject.slug}/`}>{nextProject.title} →</a></section>
+      </main>
+      <footer className="academic-footer">© Guanyue Qian · <a href="mailto:gq2032@nyu.edu">gq2032@nyu.edu</a></footer>
+    </>
   );
 }

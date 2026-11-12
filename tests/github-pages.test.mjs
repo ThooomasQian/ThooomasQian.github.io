@@ -4,14 +4,16 @@ import test from "node:test";
 
 const outputRoot = new URL("../dist-github/", import.meta.url);
 
-test("home page is pre-rendered as an academic profile", async () => {
+test("home page is pre-rendered as a compact academic profile", async () => {
   const html = await readFile(new URL("index.html", outputRoot), "utf8");
-  assert.match(html, /<title>Guanyue Qian — Research Profile<\/title>/);
+  assert.match(html, /<title>Guanyue Qian<\/title>/);
+  assert.match(html, /About/);
+  assert.match(html, /News/);
   assert.match(html, /Wireless digital twins/);
-  assert.match(html, /Physics-grounded learning/);
-  assert.match(html, /Current projects/);
-  assert.match(html, /Selected writing/);
-  assert.match(html, /Education and appointments/);
+  assert.match(html, /Differentiable Sensing/);
+  assert.match(html, /Research and Industry Experience/);
+  assert.match(html, /Honors and Awards/);
+  assert.match(html, /Leadership and Service/);
   assert.match(html, /4D Point Splatting/);
   assert.ok(html.indexOf("4D Point Splatting") < html.indexOf("HoRAMA-L"));
   assert.match(html, /arxiv\.org\/abs\/2611\.08342/);
@@ -44,7 +46,7 @@ test("every research project has a pre-rendered detail page", async () => {
   const pages = await Promise.all(routes.map((route) => readFile(new URL(`research/${route}/index.html`, outputRoot), "utf8")));
   for (const [index, html] of pages.entries()) {
     assert.match(html, new RegExp(`https:\\/\\/thooomasqian\\.github\\.io\\/research\\/${routes[index]}\\/`));
-    assert.match(html, /Research context/);
+    assert.match(html, /Research Context/);
     assert.match(html, /Method/);
     assert.match(html, /Results/);
     assert.match(html, /Resources/);

@@ -35,7 +35,7 @@ function pageHtml({ pathname, title, description, image }) {
 
 const homeHtml = pageHtml({
   pathname: "/",
-  title: "Guanyue Qian — Research Profile",
+  title: "Guanyue Qian",
   description: "Academic profile of Guanyue Qian: wireless digital twins, physics-grounded learning, 3D reconstruction, and channel measurement at NYU.",
   image: "/media/guanyue-qian.jpg",
 });
