@@ -23,7 +23,6 @@ export function ProjectDetail({ project }: { project: ResearchProject }) {
           <h1>{project.title}</h1>
           <p className="detail-lede">{project.lede}</p>
           <div className="detail-meta"><span>{project.status}</span><span>{project.period}</span></div>
-          {project.collaborators && project.collaborators.length > 0 && <p className="collaboration">Collaborative work with {project.collaborators.map((collaborator, index) => <span key={collaborator.name}>{index > 0 && ", "}{collaborator.href ? <a href={collaborator.href} target="_blank" rel="noreferrer">{collaborator.name}</a> : collaborator.name}</span>)}.</p>}
           <figure className="detail-cover"><img src={primaryImage} alt={primaryAlt} /><figcaption>{project.kicker} · project overview</figcaption></figure>
         </section>
 

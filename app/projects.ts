@@ -13,11 +13,6 @@ export type ProjectLink = {
   href: string;
 };
 
-export type ProjectCollaborator = {
-  name: string;
-  href?: string;
-};
-
 export type ResearchProject = {
   slug: string;
   index: string;
@@ -27,7 +22,6 @@ export type ResearchProject = {
   status: string;
   period: string;
   accent: string;
-  collaborators?: readonly ProjectCollaborator[];
   image?: string;
   imageAlt?: string;
   imageFit?: "contain" | "cover";
@@ -51,7 +45,6 @@ const projectRecords: readonly ResearchProject[] = [
     status: "Published · IEEE ICC",
     period: "2025—2026",
     accent: "#6d5ce7",
-    collaborators: [{ name: "Mingjun Ying", href: "https://yingmingjun.github.io/" }],
     image: "/media/horama-pointcloud.png",
     imageAlt: "Oblique RGB-D point cloud of the NYU MakerSpace captured for HoRAMA",
     metrics: [
@@ -210,7 +203,6 @@ const projectRecords: readonly ResearchProject[] = [
     status: "Journal + conference research",
     period: "2025—2026",
     accent: "#e0a62f",
-    collaborators: [{ name: "Mingjun Ying", href: "https://yingmingjun.github.io/" }],
     image: "/media/nyuray-office.png",
     imageAlt: "Top-down NYURay model of the 2 MetroTech ninth-floor office",
     metrics: [
