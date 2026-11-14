@@ -20,9 +20,10 @@ const news = [
 ] as const;
 
 const experience = [
-  { title: "Researcher · NYU WIRELESS", date: "2025 – Present", detail: "New York, NY · Wireless digital twins, site-specific ray tracing, differentiable sensing, and channel measurement." },
-  { title: "Teaching Assistant · NYU MakerSpace", date: "2025 – 2026", detail: "Fabrication and prototyping instruction spanning 3D printing, laser cutting, water-jet machining, and interdisciplinary design." },
-  { title: "Assistant Baseband Engineer · Quectel", date: "2024", detail: "Designed schematics, multilayer PCB layouts, and automotive test hardware for 5G IoT modules." },
+  { title: "Researcher · NYU WIRELESS", date: "Feb. 2025 – Present", detail: "Brooklyn, NY · Wireless digital twins, site-specific ray tracing, and channel measurement with Prof. Theodore S. Rappaport." },
+  { title: "Visiting Researcher · Cornell Tech", date: "Jun. 2026 – Sept. 2026", detail: "New York, NY · Differentiable mmWave radar rendering for human sensing with Prof. Rajalakshmi Nandakumar." },
+  { title: "Teaching Assistant · NYU MakerSpace", date: "Jan. 2025 – Dec. 2025", detail: "Led fabrication workshops (3D printing, laser cutting, water-jet machining) and mentored interdisciplinary teams from concept to prototype." },
+  { title: "Assistant Baseband Engineer · Quectel", date: "Jun. 2024 – Aug. 2024", detail: "Shanghai · Designed schematics and 13-layer PCB layouts for 5G automotive IoT modules and an automotive RF/baseband test board." },
 ] as const;
 
 function ProjectArticle({ project }: { project: ResearchProject }) {
@@ -62,7 +63,7 @@ export default function Home() {
           <div>
             <h1>Guanyue Qian</h1>
             <div className="role">B.S. Candidate in Electrical Engineering, <a href="https://www.nyu.edu/" target="_blank" rel="noreferrer">New York University</a></div>
-            <p>I am an undergraduate researcher at <a href="https://wireless.engineering.nyu.edu/" target="_blank" rel="noreferrer">NYU WIRELESS</a>. My research connects site-specific wireless propagation, machine learning, and 3D reconstruction to build digital twins and sensing models that remain grounded in physical measurements.</p>
+            <p>I am an undergraduate researcher at <a href="https://wireless.engineering.nyu.edu/" target="_blank" rel="noreferrer">NYU WIRELESS</a>, advised by <a href="https://wireless.engineering.nyu.edu/tedrappaport/" target="_blank" rel="noreferrer">Prof. Theodore S. Rappaport</a>, and spent summer 2026 at Cornell Tech with <a href="https://tech.cornell.edu/people/rajalakshmi-nandakumar/" target="_blank" rel="noreferrer">Prof. Rajalakshmi Nandakumar</a>. My research combines physical modeling, measurement, and machine learning to help wireless systems both predict and perceive the physical world.</p>
             <p>Research interests: wireless ray tracing, 3D reconstruction and digital twins, differentiable radar rendering, and upper mid-band channel measurement and modeling.</p>
             <p><strong>I am applying to Ph.D. programs and research opportunities in wireless systems, sensing, and machine learning.</strong></p>
             <div className="contact">Email: <a href="mailto:gq2032@nyu.edu">gq2032@nyu.edu</a><br /><a href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">CV</a><span className="sep">/</span><a href="https://scholar.google.com/citations?hl=en&user=ZR0V8iQAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a><span className="sep">/</span><a href="https://github.com/ThooomasQian" target="_blank" rel="noreferrer">GitHub</a><span className="sep">/</span><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn</a></div>
@@ -71,7 +72,7 @@ export default function Home() {
 
         <section id="news"><h2>News</h2><ul className="news">{news.map(([date, item]) => <li key={`${date}-${item}`}><span className="date">{date}</span><span>{item}</span></li>)}</ul></section>
 
-        <section id="education"><h2>Education</h2><ul className="timeline"><li><strong>B.S., Electrical Engineering</strong><span className="when">Sept. 2023 – 2027</span><span className="sub">New York University · GPA: 3.96 / 4.00</span></li></ul></section>
+        <section id="education"><h2>Education</h2><ul className="timeline"><li><strong>B.S., Electrical Engineering</strong><span className="when">Sept. 2023 – May 2027</span><span className="sub">New York University · GPA: 3.96 / 4.00</span></li></ul></section>
 
         <section id="experience"><h2>Research and Industry Experience</h2><ul className="timeline">{experience.map((item) => <li key={item.title}><strong>{item.title}</strong><span className="when">{item.date}</span><span className="sub">{item.detail}</span></li>)}</ul></section>
 
@@ -80,22 +81,25 @@ export default function Home() {
           {researchGroups.map((group) => <div key={group.title}><h3 className="theme">{group.title}</h3>{group.slugs.map((slug) => { const project = bySlug.get(slug); return project ? <ProjectArticle project={project} key={slug} /> : null; })}</div>)}
           <h3 className="theme">Channel Measurement & Modeling</h3>
           <article className="proj">
-            <div className="proj-head"><h4>Wideband FR1(C) and FR3 Propagation Measurements</h4><span className="meta">2024 – Present · NYU WIRELESS</span></div>
-            <ul><li>Contributed to 6.75 and 16.95 GHz campaigns in urban microcell, indoor hotspot, and indoor factory environments, including penetration-loss and cross-polarization measurements.</li><li>Conducted 3.7 GHz FR1(C) measurements with a 1 GHz sliding-correlator channel sounder across the same three deployment scenarios.</li><li>Developed statistical channel models and machine-readable point data for reproducible comparison across frequencies, environments, and institutions.</li></ul>
+            <div className="proj-head"><h4>Wideband FR1(C) and FR3 Propagation Measurements</h4><span className="meta">2025 – Present · NYU WIRELESS</span></div>
+            <ul><li>Contributed to 6.75 and 16.95 GHz campaigns in urban microcell, indoor hotspot, and indoor factory environments, including penetration-loss and cross-polarization measurements.</li><li>Re-engineered the RF system of a 1 GHz-bandwidth sliding-correlator channel sounder to operate at 3.7 GHz, and conducted FR1(C) measurement campaigns in urban microcell, indoor office, and indoor factory environments, comparing path loss, delay spread, and angular spread with 3GPP TR 38.901.</li><li>Developed statistical channel models and machine-readable point data for reproducible comparison across frequencies, environments, and institutions.</li></ul>
             <div className="media"><figure><video controls muted preload="metadata" playsInline><source src="/media/fr1-measurement.mp4" type="video/mp4" /></video><figcaption>3.7 GHz FR1(C) measurement campaign</figcaption></figure></div>
             <div className="gallery g3"><figure><img loading="lazy" className="photo" src="/media/about-channel-measurement.jpg" alt="Preparing channel measurement hardware" /><figcaption>Equipment preparation</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/about-equipment-test.jpg" alt="Testing RF measurement equipment" /><figcaption>RF system test</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/about-sounder-check.jpg" alt="Channel sounder equipment check" /><figcaption>Sounder verification</figcaption></figure></div>
           </article>
         </section>
 
         <section id="publications">
-          <h2>Publications</h2><p className="filters">Preprints and publisher records are linked where a public version is available. Manuscript status is shown explicitly.</p>
-          <div className="pub-group"><h3>Journal Articles</h3><ul className="publication-list">{publications.filter((paper) => paper.index.startsWith("J")).map((paper) => <li key={paper.index}><span className="pub-label">[{paper.index}]</span>{paper.title}, <em>{paper.venue}</em>, {paper.year}. {paper.href && <a href={paper.href} target="_blank" rel="noreferrer">[Paper]</a>}</li>)}</ul></div>
-          <div className="pub-group"><h3>Conference Papers and Manuscripts</h3><ul className="publication-list">{publications.filter((paper) => paper.index.startsWith("C")).map((paper) => <li key={paper.index}><span className="pub-label">[{paper.index}]</span>{paper.title}, <em>{paper.venue}</em>, {paper.year}. <span className="status">{paper.status}.</span> {paper.href && <a href={paper.href} target="_blank" rel="noreferrer">[Paper]</a>}</li>)}</ul></div>
+          <h2>Publications</h2><p className="filters">Preprints and publisher records are linked where a public version is available. Manuscript status is shown explicitly. My name is shown in bold; first-authored papers are listed first.</p>
+          {[
+            { prefix: "J", title: "Journal Articles" },
+            { prefix: "C", title: "Conference Papers and Manuscripts" },
+            { prefix: "M", title: "Magazine Articles" },
+          ].map((group) => <div className="pub-group" key={group.prefix}><h3>{group.title}</h3><ul className="publication-list">{publications.filter((paper) => paper.index.startsWith(group.prefix)).map((paper) => <li key={paper.index}><span className="pub-label">[{paper.index}]</span><span className="authors" dangerouslySetInnerHTML={{ __html: paper.authors }} />, &ldquo;{paper.title},&rdquo; <em>{paper.venue}</em>, {paper.year}. <span className="status">{paper.status}.</span> {paper.href && <a href={paper.href} target="_blank" rel="noreferrer">[Paper]</a>}</li>)}</ul></div>)}
         </section>
 
-        <section id="honors"><h2>Honors and Awards</h2><ul className="plain"><li>William J. Stolze Award, NYU Tandon School of Engineering</li><li>Tau Beta Pi Engineering Honor Society</li><li>Dean’s List, New York University</li><li>Rappaport Scholarship</li></ul><div className="gallery g2 honors-gallery"><figure><img loading="lazy" className="photo" src="/media/about-stolze-award.jpg" alt="Guanyue Qian receiving the William J. Stolze Award" /><figcaption>William J. Stolze Award · NYU Tandon</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/conference-poster-session.jpg" alt="HoRAMA conference poster presentation" /><figcaption>HoRAMA · conference poster session</figcaption></figure></div></section>
+        <section id="honors"><h2>Honors and Awards</h2><ul className="plain"><li>William J. Stolze Award (Highest Academic Standing), NYU Tandon School of Engineering</li><li>Myron M. Rosenthal Merit Award, NYU Tandon School of Engineering</li><li>RCA Ted Rappaport Scholarship, Radio Club of America</li><li>Tau Beta Pi Engineering Honor Society</li><li>Dean&apos;s List, New York University (all semesters)</li><li>FIRST Robotics Competition, 2023 Istanbul Regional Winner (as coach)</li></ul><div className="gallery g2 honors-gallery"><figure><img loading="lazy" className="photo" src="/media/about-stolze-award.jpg" alt="Guanyue Qian receiving the William J. Stolze Award" /><figcaption>William J. Stolze Award · NYU Tandon</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/conference-poster-session.jpg" alt="HoRAMA conference poster presentation" /><figcaption>HoRAMA · conference poster session</figcaption></figure></div></section>
 
-        <section id="service"><h2>Leadership and Service</h2><ul className="plain"><li><strong>Robotics Design Lead and Coach</strong>, FRC and RoboMaster teams, 2020 – Present.</li><li><strong>Teaching Assistant</strong>, NYU MakerSpace, supporting student fabrication and interdisciplinary prototyping.</li><li><strong>Research communication</strong>, conference poster presentations and technical demonstrations for wireless digital-twin projects.</li></ul></section>
+        <section id="service"><h2>Leadership and Service</h2><ul className="plain"><li><strong>Coach and Robotics Design Lead</strong>, FIRST Robotics Team 8015 &amp; NYU RoboMaster Team, Sept. 2020 – Present; coached the FRC team to victory at the 2023 Istanbul Regional.</li><li><strong>Teaching Assistant</strong>, NYU MakerSpace, supporting student fabrication and interdisciplinary prototyping.</li><li><strong>Research communication</strong>, conference poster presentations and technical demonstrations for wireless digital-twin projects.</li></ul></section>
       </main>
       <footer className="academic-footer">© Guanyue Qian · Last updated: Nov. 2026</footer>
     </>

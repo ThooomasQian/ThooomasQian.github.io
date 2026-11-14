@@ -20,7 +20,7 @@ test("home page is pre-rendered as a compact academic profile", async () => {
   assert.match(html, /arxiv\.org\/abs\/2611\.08342/);
   assert.match(html, /arxiv\.org\/abs\/2610\.03887/);
   assert.match(html, /arxiv\.org\/abs\/2609\.06077/);
-  assert.match(html, /arxiv\.org\/abs\/2510\.00141/);
+  assert.match(html, /ieeexplore\.ieee\.org\/document\/11309979/);
   assert.match(html, /machine-readable point data/);
   assert.match(html, /mailto:gq2032@nyu\.edu/);
   assert.match(html, />gq2032@nyu\.edu<\/a>/);
