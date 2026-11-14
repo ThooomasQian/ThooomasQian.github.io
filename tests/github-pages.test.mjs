@@ -13,6 +13,7 @@ test("home page is pre-rendered as a compact academic profile", async () => {
   assert.match(html, /Differentiable Sensing/);
   assert.match(html, /Research and Industry Experience/);
   assert.match(html, /Honors and Awards/);
+  assert.match(html, /Myron M\. Rosenthal Merit Award/);
   assert.match(html, /Leadership and Service/);
   assert.match(html, /4D Point Splatting/);
   assert.ok(html.indexOf("4D Point Splatting") < html.indexOf("HoRAMA-L"));

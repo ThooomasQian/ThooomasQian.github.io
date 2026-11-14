@@ -14,6 +14,7 @@ const news = [
   ["Nov. 2026", "4D Point Splatting for mmWave radar micro-Doppler released as an arXiv preprint and submitted to ICLR 2027."],
   ["Oct. 2026", "PRIMO study on joint beamforming and RIS deployment accepted at the Asilomar Conference."],
   ["Sept. 2026", "SPARC sparse path-aware calibration accepted at IEEE GLOBECOM 2026."],
+  ["May 2026", "Received the Myron M. Rosenthal Merit Award."],
   ["May 2026", "HoRAMA material-aware reconstruction presented at IEEE ICC 2026 in Glasgow."],
   ["Mar. 2026", "NYURay site-specific calibration and validation published in npj Wireless Technology."],
 ] as const;
