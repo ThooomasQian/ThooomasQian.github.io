@@ -111,7 +111,9 @@ const projectRecords: readonly ResearchProject[] = [
     ],
     tools: ["RGB-D", "LiDAR", "ARKit", "SegFormer", "Vision-Language Models", "LLMs", "Blender", "NYURay", "Mitsuba", "ITU-R P.2040"],
     gallery: [
-      { src: "/media/horama-l-validation.png", alt: "HoRAMA-L geometry and dual-band ray-tracing validation plots", caption: "WALL COVERAGE + DUAL-BAND VALIDATION · 12 LINKS PER BAND" },
+      { src: "/media/horama-l-wall-coverage.png", alt: "Wall coverage versus distance tolerance for HoRAMA and HoRAMA-L", caption: "WALL COVERAGE · HANDCRAFTED REFERENCE" },
+      { src: "/media/horama-l-path-loss.png", alt: "Measured and simulated path loss at 6.75 and 16.95 GHz", caption: "PATH LOSS · 12 LINKS PER BAND" },
+      { src: "/media/horama-l-spread-cdf.png", alt: "Delay and angular spread distributions at 6.75 and 16.95 GHz", caption: "DELAY + ANGULAR SPREAD · DUAL-BAND VALIDATION" },
     ],
     links: [],
   },
@@ -203,8 +205,8 @@ const projectRecords: readonly ResearchProject[] = [
     status: "Journal + conference research",
     period: "2025—2026",
     accent: "#e0a62f",
-    image: "/media/nyuray-office.png",
-    imageAlt: "Top-down NYURay model of the 2 MetroTech ninth-floor office",
+    image: "/media/nyuray-primo-scenario.png",
+    imageAlt: "PRIMO ray-traced MetroTech Commons scenario with base station, RIS candidates, and indoor users",
     metrics: [
       { value: "18.74 → 4.74", label: "dB path-power RMSE" },
       { value: "≈100×", label: "faster joint optimization" },
@@ -229,7 +231,8 @@ const projectRecords: readonly ResearchProject[] = [
     ],
     tools: ["NYURay", "GPU Ray Tracing", "SPARC", "Sparse Learning", "PRIMO", "RIS", "Beamforming", "Site-Specific Channels"],
     gallery: [
-      { src: "/media/rt-scene.jpg", alt: "Ray-tracing scene and propagation paths", caption: "SCENE-SPECIFIC GEOMETRY · CALIBRATED MULTIPATH" },
+      { src: "/media/nyuray-primo-system.png", alt: "PRIMO outdoor-to-indoor RIS-assisted system model", caption: "PRIMO · OUTDOOR-TO-INDOOR RIS SYSTEM" },
+      { src: "/media/nyuray-sparc-results.svg", alt: "SPARC per-path calibration RMSE and empirical distribution results", caption: "SPARC · PER-PATH CALIBRATION RESULTS" },
     ],
     links: [
       { label: "Read the calibration paper", href: "https://www.nature.com/articles/s44459-025-00014-x" },

@@ -37,6 +37,12 @@ test("static build contains essential media and browser assets", async () => {
     access(new URL("media/horama-pointcloud.png", outputRoot)),
     access(new URL("media/4dps-pipeline.png", outputRoot)),
     access(new URL("media/horama-l-reconstruction.png", outputRoot)),
+    access(new URL("media/horama-l-wall-coverage.png", outputRoot)),
+    access(new URL("media/horama-l-path-loss.png", outputRoot)),
+    access(new URL("media/horama-l-spread-cdf.png", outputRoot)),
+    access(new URL("media/nyuray-primo-scenario.png", outputRoot)),
+    access(new URL("media/nyuray-primo-system.png", outputRoot)),
+    access(new URL("media/nyuray-sparc-results.svg", outputRoot)),
     access(new URL("media/about-channel-measurement.jpg", outputRoot)),
     access(new URL("media/conference-poster-session.jpg", outputRoot)),
     access(new URL("media/about-stolze-award.jpg", outputRoot)),
@@ -61,8 +67,14 @@ test("every research project has a pre-rendered detail page", async () => {
   assert.match(pages[0], /MASt3R-SLAM/);
   assert.match(pages[1], /335/);
   assert.match(pages[2], /450,141/);
+  assert.match(pages[2], /horama-l-wall-coverage\.png/);
+  assert.match(pages[2], /horama-l-path-loss\.png/);
+  assert.match(pages[2], /horama-l-spread-cdf\.png/);
+  assert.doesNotMatch(pages[2], /horama-l-validation\.png/);
   assert.match(pages[3], /known-free violations/);
   assert.match(pages[4], /18\.74/);
   assert.match(pages[4], /one million rays/);
+  assert.match(pages[4], /nyuray-primo-scenario\.png/);
+  assert.match(pages[4], /nyuray-sparc-results\.svg/);
   await assert.rejects(access(new URL("research/pdp-diffusion/index.html", outputRoot)));
 });

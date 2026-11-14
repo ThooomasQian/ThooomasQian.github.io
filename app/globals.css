@@ -102,6 +102,8 @@ h3.theme { margin: 26px 0 6px; font-size: 19px; }
 .detail-cover { max-width: 820px; margin: 22px auto 0; }
 .detail-cover img { display: block; width: 100%; max-height: 560px; object-fit: contain; border: 1px solid var(--line); background: #fff; }
 .detail-cover figcaption { margin-top: 3px; color: var(--muted); font-size: 13px; text-align: center; }
+.detail-main .gallery { align-items: start; }
+.detail-main .gallery img { height: auto; max-height: 420px; }
 .detail-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .detail-metrics div { padding: 10px 12px; border: 1px solid var(--line); }
 .detail-metrics strong { display: block; font-size: 20px; }
