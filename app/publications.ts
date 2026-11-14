@@ -8,7 +8,7 @@ type Publication = {
   href?: string;
 };
 
-export const publications: readonly Publication[] = [
+const publicationRecords: readonly Publication[] = [
   {
     index: "J1",
     year: "2026",
@@ -147,3 +147,12 @@ export const publications: readonly Publication[] = [
     href: "https://ieeexplore.ieee.org/abstract/document/11615106",
   },
 ];
+
+function authorPosition(paper: Publication): number {
+  const position = paper.authors.split(",").findIndex((author) => author.includes("<b>G. Qian</b>"));
+  return position < 0 ? Number.POSITIVE_INFINITY : position;
+}
+
+export const publications: readonly Publication[] = [...publicationRecords].sort(
+  (first, second) => authorPosition(first) - authorPosition(second),
+);

@@ -82,14 +82,14 @@ export default function Home() {
           <h3 className="theme">Channel Measurement & Modeling</h3>
           <article className="proj">
             <div className="proj-head"><h4>Wideband FR1(C) and FR3 Propagation Measurements</h4><span className="meta">2025 – Present · NYU WIRELESS</span></div>
-            <ul><li>Contributed to 6.75 and 16.95 GHz campaigns in urban microcell, indoor hotspot, and indoor factory environments, including penetration-loss and cross-polarization measurements.</li><li>Re-engineered the RF system of a 1 GHz-bandwidth sliding-correlator channel sounder to operate at 3.7 GHz, and conducted FR1(C) measurement campaigns in urban microcell, indoor office, and indoor factory environments, comparing path loss, delay spread, and angular spread with 3GPP TR 38.901.</li><li>Developed statistical channel models and machine-readable point data for reproducible comparison across frequencies, environments, and institutions.</li></ul>
+            <ul><li>Contributed to measurement campaigns at 6.75 and 16.95 GHz, including penetration-loss and cross-polarization measurements.</li><li>Re-engineered the RF system of a 1 GHz-bandwidth sliding-correlator channel sounder to operate at 3.7 GHz, and conducted FR1(C) measurement campaigns in urban microcell, indoor office, and indoor factory environments, comparing path loss, delay spread, and angular spread with 3GPP TR 38.901.</li><li>Developed statistical channel models and machine-readable point data for reproducible comparison across frequencies, environments, and institutions.</li></ul>
             <div className="media"><figure><video controls muted preload="metadata" playsInline><source src="/media/fr1-measurement.mp4" type="video/mp4" /></video><figcaption>3.7 GHz FR1(C) measurement campaign</figcaption></figure></div>
             <div className="gallery g3"><figure><img loading="lazy" className="photo" src="/media/about-channel-measurement.jpg" alt="Preparing channel measurement hardware" /><figcaption>Equipment preparation</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/about-equipment-test.jpg" alt="Testing RF measurement equipment" /><figcaption>RF system test</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/about-sounder-check.jpg" alt="Channel sounder equipment check" /><figcaption>Sounder verification</figcaption></figure></div>
           </article>
         </section>
 
         <section id="publications">
-          <h2>Publications</h2><p className="filters">Preprints and publisher records are linked where a public version is available. Manuscript status is shown explicitly. My name is shown in bold; first-authored papers are listed first.</p>
+          <h2>Publications</h2><p className="filters">Preprints and publisher records are linked where a public version is available. Manuscript status is shown explicitly. My name is shown in bold; papers within each category are ordered by my author position, with first- and second-authored work listed first.</p>
           {[
             { prefix: "J", title: "Journal Articles" },
             { prefix: "C", title: "Conference Papers and Manuscripts" },
