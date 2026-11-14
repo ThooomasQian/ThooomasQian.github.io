@@ -20,6 +20,8 @@ test("home page is pre-rendered as a compact academic profile", async () => {
   assert.match(html, /arxiv\.org\/abs\/2610\.03887/);
   assert.match(html, /arxiv\.org\/abs\/2609\.06077/);
   assert.match(html, /arxiv\.org\/abs\/2510\.00141/);
+  assert.match(html, /with[^<]*<a[^>]+yingmingjun\.github\.io[^>]*>Mingjun Ying<\/a>/);
+  assert.match(html, /machine-readable point data/);
   assert.doesNotMatch(html, /<!--app-html-->/);
 });
 
@@ -53,9 +55,13 @@ test("every research project has a pre-rendered detail page", async () => {
     assert.doesNotMatch(html, /<!--app-html-->/);
   }
   assert.match(pages[0], /phone scan to a radio-ready digital twin/);
+  assert.match(pages[0], /Collaborative work with/);
+  assert.match(pages[0], /MASt3R-SLAM/);
   assert.match(pages[1], /335/);
   assert.match(pages[2], /450,141/);
   assert.match(pages[3], /known-free violations/);
   assert.match(pages[4], /401/);
   assert.match(pages[5], /18\.74/);
+  assert.match(pages[5], /Collaborative work with/);
+  assert.match(pages[5], /one million rays/);
 });

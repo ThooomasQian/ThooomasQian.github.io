@@ -13,6 +13,11 @@ export type ProjectLink = {
   href: string;
 };
 
+export type ProjectCollaborator = {
+  name: string;
+  href?: string;
+};
+
 export type ResearchProject = {
   slug: string;
   index: string;
@@ -22,6 +27,7 @@ export type ResearchProject = {
   status: string;
   period: string;
   accent: string;
+  collaborators?: readonly ProjectCollaborator[];
   image?: string;
   imageAlt?: string;
   imageFit?: "contain" | "cover";
@@ -41,10 +47,11 @@ const projectRecords: readonly ResearchProject[] = [
     index: "01",
     kicker: "VISION + WIRELESS",
     title: "From a phone scan to a radio-ready digital twin.",
-    lede: "HoRAMA turns an RGB-D walkthrough into a material-aware 3D scene that is ready for deterministic wireless ray tracing and channel validation.",
+    lede: "HoRAMA is an automated framework that turns an RGB-D walkthrough into a ray-tracing-ready 3D model with electromagnetic material labels, reducing scene construction from months to hours.",
     status: "Published · IEEE ICC",
     period: "2025—2026",
     accent: "#6d5ce7",
+    collaborators: [{ name: "Mingjun Ying", href: "https://yingmingjun.github.io/" }],
     image: "/media/horama-pointcloud.png",
     imageAlt: "Oblique RGB-D point cloud of the NYU MakerSpace captured for HoRAMA",
     metrics: [
@@ -53,15 +60,15 @@ const projectRecords: readonly ResearchProject[] = [
       { value: "2.3 / 3.8 dB", label: "PL RMSE at 6.75 / 16.95 GHz" },
     ],
     overview: [
-      "High-fidelity ray-tracing scenes are normally built by hand. HoRAMA replaces that slow modeling loop with a pipeline that begins with a phone-scale RGB-D capture and ends with geometry, semantics, electromagnetic materials, and a simulator-ready scene.",
-      "The canonical MakerSpace reconstruction contains 297 planar facets and 131 machine, clutter, duct, and column proxies. It is evaluated against twelve measured TX–RX links and an expert hand-built reference at two upper-mid-band frequencies.",
+      "High-fidelity ray-tracing scenes are usually assembled by hand. HoRAMA replaces that workflow with phone-scale RGB-D capture, SLAM reconstruction, point-level semantic understanding, and vision-language material assignment.",
+      "The 700 m² NYU MakerSpace reconstruction is evaluated with NYURay against twelve measured TX–RX links at 6.75 and 16.95 GHz. Its channel accuracy is comparable to an expert hand-built reference while requiring a fraction of the modeling time.",
     ],
     question: "Can an automatically reconstructed scene preserve the geometry and materials that matter to radio propagation—without months of manual CAD work?",
     method: [
-      { title: "Capture", text: "Fuse RGB-D video and SLAM poses into a dense 2.03-million-point scan of the operating space." },
-      { title: "Understand", text: "Lift semantic labels into 3D and consolidate them into seven radio-relevant macro classes." },
+      { title: "Capture", text: "Fuse RGB-D video and MASt3R-SLAM poses into a dense point-cloud model of the operating space." },
+      { title: "Understand", text: "Use PTv3 semantic segmentation to organize the scan into radio-relevant surface and object classes." },
       { title: "Reconstruct", text: "Fit and regularize planes, openings, columns, ducts, and object proxies into a compact scene." },
-      { title: "Assign materials", text: "Map visual semantics to frequency-dependent ITU-R electromagnetic material models." },
+      { title: "Assign materials", text: "Use Qwen3-VL-assisted labeling to map visual semantics to frequency-dependent ITU-R electromagnetic material models." },
       { title: "Validate", text: "Calibrate scattering and compare simulated path loss, delay, and angular structure with measurements." },
     ],
     outcomes: [
@@ -69,7 +76,7 @@ const projectRecords: readonly ResearchProject[] = [
       "The workflow supports downstream coverage, beam-management, and robotic sensing studies from the same digital twin.",
       "A held-out 3.7 GHz campaign tests the frozen reconstruction and calibration procedure under a reconfigured hall layout.",
     ],
-    tools: ["RGB-D", "SLAM", "LabelMaker", "RANSAC", "Sionna RT", "NYURay", "Mitsuba", "ITU-R P.2040"],
+    tools: ["RGB-D", "MASt3R-SLAM", "PTv3", "Qwen3-VL", "RANSAC", "NYURay", "Mitsuba", "ITU-R P.2040"],
     gallery: [
       { src: "/media/horama-pipeline.jpg", alt: "HoRAMA reconstruction and wireless validation pipeline", caption: "END-TO-END PIPELINE · CAPTURE → RECONSTRUCTION → CHANNEL VALIDATION" },
       { src: "/media/horama-reconstruction.jpg", alt: "Material-aware HoRAMA reconstruction", caption: "SEMANTIC GEOMETRY · MATERIAL-AWARE DIGITAL TWIN" },
@@ -199,10 +206,11 @@ const projectRecords: readonly ResearchProject[] = [
     index: "06",
     kicker: "CALIBRATION + RIS",
     title: "Site-specific radio intelligence.",
-    lede: "Two linked research threads make deterministic propagation models more useful: sparse learned calibration for path power, and fast joint optimization of beams, RIS phase, and deployment.",
+    lede: "NYURay, SPARC, and PRIMO connect calibrated site-specific ray tracing with sparse learned path correction and fast RIS-assisted coverage optimization.",
     status: "Journal + conference research",
     period: "2025—2026",
     accent: "#e0a62f",
+    collaborators: [{ name: "Mingjun Ying", href: "https://yingmingjun.github.io/" }],
     image: "/media/nyuray-office.png",
     imageAlt: "Top-down NYURay model of the 2 MetroTech ninth-floor office",
     metrics: [
@@ -211,15 +219,15 @@ const projectRecords: readonly ResearchProject[] = [
       { value: "273", label: "ITU-tagged scene meshes" },
     ],
     overview: [
-      "Site-specific simulators predict individual paths, not just aggregate fading statistics. Their value depends on accurate material, antenna, and location calibration—and on algorithms that can act on the resulting channel efficiently.",
-      "SPARC learns sparse path-aware residual corrections to measured multipath components. A complementary RIS project uses the simulator as a differentiable decision surface for outdoor-to-indoor coverage design.",
+      "NYURay is a Python ray tracer for upper-mid-band channel prediction that models reflection, diffraction, penetration, and scattering. Its GPU pipeline traces one million rays in roughly 3–5 seconds per TX–RX pair and supports 3D antenna patterns and site-specific placement.",
+      "SPARC corrects per-path power errors from a small measurement set while retaining physical ray geometry. PRIMO then uses dual-band FR1(C)/FR3 ray-traced channels to jointly optimize base-station precoding, RIS phase shifts, and RIS placement for outdoor-to-indoor coverage.",
     ],
     question: "How can a detailed ray tracer be calibrated with limited measurements and then used inside an optimization loop without making the loop prohibitively slow?",
     method: [
-      { title: "Align paths", text: "Match simulated and measured multipath components using delay, power, and geometric identity." },
+      { title: "Calibrate location", text: "Align simulated and measured power-delay profiles before matching multipath components by delay, power, and geometric identity." },
       { title: "Learn sparse corrections", text: "Predict only the residual adjustments needed for path powers while keeping ray geometry intact." },
       { title: "Validate by location", text: "Hold out measurement locations so calibration accuracy reflects spatial generalization." },
-      { title: "Factor the RIS problem", text: "Jointly optimize precoding, RIS phases, and placement using structured site-specific channel evaluations." },
+      { title: "Factor the RIS problem", text: "Jointly optimize base-station precoding, RIS phase shifts, and deployment position using GPU-parallel site-specific channel evaluations." },
       { title: "Measure operational gain", text: "Report both prediction error and end-task coverage/optimization speed." },
     ],
     outcomes: [
@@ -227,7 +235,7 @@ const projectRecords: readonly ResearchProject[] = [
       "The RIS workflow reaches roughly two orders of magnitude faster optimization than a brute-force site search.",
       "The same scene representation supports calibration, coverage analysis, beam studies, and generative-channel anchors.",
     ],
-    tools: ["NYURay", "Sionna RT", "Sparse Learning", "RIS", "Beamforming", "Mitsuba", "Site-Specific Channels"],
+    tools: ["NYURay", "GPU Ray Tracing", "SPARC", "Sparse Learning", "PRIMO", "RIS", "Beamforming", "Site-Specific Channels"],
     gallery: [
       { src: "/media/rt-scene.jpg", alt: "Ray-tracing scene and propagation paths", caption: "SCENE-SPECIFIC GEOMETRY · CALIBRATED MULTIPATH" },
     ],

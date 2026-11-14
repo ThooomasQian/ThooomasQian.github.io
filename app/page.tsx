@@ -32,7 +32,7 @@ function ProjectArticle({ project }: { project: ResearchProject }) {
 
   return (
     <article className="proj">
-      <div className="proj-head"><h4>{project.title}</h4><span className="meta">{project.period} · {project.status}</span></div>
+      <div className="proj-head"><h4>{project.title}</h4><span className="meta">{project.period} · {project.status}{project.collaborators?.map((collaborator) => <span className="collab-inline" key={collaborator.name}> · with {collaborator.href ? <a href={collaborator.href} target="_blank" rel="noreferrer">{collaborator.name}</a> : collaborator.name}</span>)}</span></div>
       <ul>
         <li>{project.lede}</li>
         {project.outcomes.slice(0, 2).map((outcome) => <li key={outcome}>{outcome}</li>)}
@@ -76,11 +76,12 @@ export default function Home() {
 
         <section id="research">
           <h2>Research</h2>
+          <p className="research-note">The collaborative projects below identify shared work explicitly; descriptions are written from my role in the joint research.</p>
           {researchGroups.map((group) => <div key={group.title}><h3 className="theme">{group.title}</h3>{group.slugs.map((slug) => { const project = bySlug.get(slug); return project ? <ProjectArticle project={project} key={slug} /> : null; })}</div>)}
           <h3 className="theme">Channel Measurement & Modeling</h3>
           <article className="proj">
-            <div className="proj-head"><h4>Wideband FR1(C) and FR3 Propagation Measurements</h4><span className="meta">2024 – Present · NYU WIRELESS</span></div>
-            <ul><li>Measurement campaigns at 3.7, 6.75, and 16.95 GHz across urban microcell, indoor hotspot, and indoor factory environments.</li><li>Wideband sliding-correlator channel sounding, path-loss modeling, delay and angular statistics, and site-specific validation.</li><li>Results support 5G/6G channel models and deterministic ray-tracing studies from FR1(C) through FR3.</li></ul>
+            <div className="proj-head"><h4>Wideband FR1(C) and FR3 Propagation Measurements</h4><span className="meta">2024 – Present · with <a href="https://yingmingjun.github.io/" target="_blank" rel="noreferrer">Mingjun Ying</a> and NYU WIRELESS collaborators</span></div>
+            <ul><li>Contributed to 6.75 and 16.95 GHz campaigns in urban microcell, indoor hotspot, and indoor factory environments, including penetration-loss and cross-polarization measurements.</li><li>Conducted 3.7 GHz FR1(C) measurements with a 1 GHz sliding-correlator channel sounder across the same three deployment scenarios.</li><li>Developed statistical channel models and machine-readable point data for reproducible comparison across frequencies, environments, and institutions.</li></ul>
             <div className="media"><figure><video controls muted preload="metadata" playsInline><source src="/media/fr1-measurement.mp4" type="video/mp4" /></video><figcaption>3.7 GHz FR1(C) measurement campaign</figcaption></figure></div>
             <div className="gallery g3"><figure><img loading="lazy" className="photo" src="/media/about-channel-measurement.jpg" alt="Preparing channel measurement hardware" /><figcaption>Equipment preparation</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/about-equipment-test.jpg" alt="Testing RF measurement equipment" /><figcaption>RF system test</figcaption></figure><figure><img loading="lazy" className="photo" src="/media/about-sounder-check.jpg" alt="Channel sounder equipment check" /><figcaption>Sounder verification</figcaption></figure></div>
           </article>
