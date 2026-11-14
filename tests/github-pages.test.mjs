@@ -25,6 +25,7 @@ test("home page is pre-rendered as a compact academic profile", async () => {
   assert.match(html, />gq2032@nyu\.edu<\/a>/);
   assert.doesNotMatch(html, /Mingjun Ying|NYU WIRELESS collaborators/);
   assert.doesNotMatch(html, /pdp-diffusion|Generate the residual|generative channel modeling/);
+  assert.doesNotMatch(html, /Complete what the camera cannot see|geometry-completion|known-free violations/);
   assert.doesNotMatch(html, /<!--app-html-->/);
 });
 
@@ -53,7 +54,7 @@ test("static build contains essential media and browser assets", async () => {
 });
 
 test("every research project has a pre-rendered detail page", async () => {
-  const routes = ["horama", "radar-splatting", "horama-l", "geometry-completion", "nyuray-intelligence"];
+  const routes = ["horama", "radar-splatting", "horama-l", "nyuray-intelligence"];
   const pages = await Promise.all(routes.map((route) => readFile(new URL(`research/${route}/index.html`, outputRoot), "utf8")));
   for (const [index, html] of pages.entries()) {
     assert.match(html, new RegExp(`https:\\/\\/thooomasqian\\.github\\.io\\/research\\/${routes[index]}\\/`));
@@ -71,10 +72,10 @@ test("every research project has a pre-rendered detail page", async () => {
   assert.match(pages[2], /horama-l-path-loss\.png/);
   assert.match(pages[2], /horama-l-spread-cdf\.png/);
   assert.doesNotMatch(pages[2], /horama-l-validation\.png/);
-  assert.match(pages[3], /known-free violations/);
-  assert.match(pages[4], /18\.74/);
-  assert.match(pages[4], /one million rays/);
-  assert.match(pages[4], /nyuray-primo-scenario\.png/);
-  assert.match(pages[4], /nyuray-sparc-results\.svg/);
+  assert.match(pages[3], /18\.74/);
+  assert.match(pages[3], /one million rays/);
+  assert.match(pages[3], /nyuray-primo-scenario\.png/);
+  assert.match(pages[3], /nyuray-sparc-results\.svg/);
+  await assert.rejects(access(new URL("research/geometry-completion/index.html", outputRoot)));
   await assert.rejects(access(new URL("research/pdp-diffusion/index.html", outputRoot)));
 });

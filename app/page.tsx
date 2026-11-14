@@ -6,7 +6,7 @@ import { publications } from "./publications";
 const bySlug = new Map(projects.map((project) => [project.slug, project]));
 
 const researchGroups = [
-  { title: "Wireless Digital Twins & Ray Tracing", slugs: ["horama", "horama-l", "geometry-completion", "nyuray-intelligence"] },
+  { title: "Wireless Digital Twins & Ray Tracing", slugs: ["horama", "horama-l", "nyuray-intelligence"] },
   { title: "Differentiable Sensing", slugs: ["radar-splatting"] },
 ] as const;
 
