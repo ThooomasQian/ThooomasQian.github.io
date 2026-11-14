@@ -283,7 +283,6 @@ export const projects: readonly ResearchProject[] = [
   "radar-splatting",
   "horama-l",
   "geometry-completion",
-  "pdp-diffusion",
   "nyuray-intelligence",
 ].map((slug) => {
   const project = projectRecords.find((item) => item.slug === slug);

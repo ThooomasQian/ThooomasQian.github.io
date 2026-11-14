@@ -7,7 +7,7 @@ const bySlug = new Map(projects.map((project) => [project.slug, project]));
 
 const researchGroups = [
   { title: "Wireless Digital Twins & Ray Tracing", slugs: ["horama", "horama-l", "geometry-completion", "nyuray-intelligence"] },
-  { title: "Differentiable Sensing & Generative Wireless Models", slugs: ["radar-splatting", "pdp-diffusion"] },
+  { title: "Differentiable Sensing", slugs: ["radar-splatting"] },
 ] as const;
 
 const news = [
@@ -19,7 +19,7 @@ const news = [
 ] as const;
 
 const experience = [
-  { title: "Researcher · NYU WIRELESS", date: "2025 – Present", detail: "New York, NY · Wireless digital twins, site-specific ray tracing, differentiable sensing, and generative channel modeling." },
+  { title: "Researcher · NYU WIRELESS", date: "2025 – Present", detail: "New York, NY · Wireless digital twins, site-specific ray tracing, differentiable sensing, and channel measurement." },
   { title: "Teaching Assistant · NYU MakerSpace", date: "2025 – 2026", detail: "Fabrication and prototyping instruction spanning 3D printing, laser cutting, water-jet machining, and interdisciplinary design." },
   { title: "Assistant Baseband Engineer · Quectel", date: "2024", detail: "Designed schematics, multilayer PCB layouts, and automotive test hardware for 5G IoT modules." },
 ] as const;
@@ -62,7 +62,7 @@ export default function Home() {
             <h1>Guanyue Qian</h1>
             <div className="role">B.S. Candidate in Electrical Engineering, <a href="https://www.nyu.edu/" target="_blank" rel="noreferrer">New York University</a></div>
             <p>I am an undergraduate researcher at <a href="https://wireless.engineering.nyu.edu/" target="_blank" rel="noreferrer">NYU WIRELESS</a>. My research connects site-specific wireless propagation, machine learning, and 3D reconstruction to build digital twins and sensing models that remain grounded in physical measurements.</p>
-            <p>Research interests: wireless ray tracing, 3D reconstruction and digital twins, differentiable radar rendering, generative models for wireless channels, and upper mid-band channel measurement and modeling.</p>
+            <p>Research interests: wireless ray tracing, 3D reconstruction and digital twins, differentiable radar rendering, and upper mid-band channel measurement and modeling.</p>
             <p><strong>I am applying to Ph.D. programs and research opportunities in wireless systems, sensing, and machine learning.</strong></p>
             <div className="contact">Email: <a href="mailto:gq2032@nyu.edu">gq2032@nyu.edu</a><br /><a href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">CV</a><span className="sep">/</span><a href="https://scholar.google.com/citations?hl=en&user=ZR0V8iQAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a><span className="sep">/</span><a href="https://github.com/ThooomasQian" target="_blank" rel="noreferrer">GitHub</a><span className="sep">/</span><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn</a></div>
           </div>

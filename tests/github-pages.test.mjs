@@ -24,6 +24,7 @@ test("home page is pre-rendered as a compact academic profile", async () => {
   assert.match(html, /mailto:gq2032@nyu\.edu/);
   assert.match(html, />gq2032@nyu\.edu<\/a>/);
   assert.doesNotMatch(html, /Mingjun Ying|NYU WIRELESS collaborators/);
+  assert.doesNotMatch(html, /pdp-diffusion|Generate the residual|generative channel modeling/);
   assert.doesNotMatch(html, /<!--app-html-->/);
 });
 
@@ -46,7 +47,7 @@ test("static build contains essential media and browser assets", async () => {
 });
 
 test("every research project has a pre-rendered detail page", async () => {
-  const routes = ["horama", "radar-splatting", "horama-l", "geometry-completion", "pdp-diffusion", "nyuray-intelligence"];
+  const routes = ["horama", "radar-splatting", "horama-l", "geometry-completion", "nyuray-intelligence"];
   const pages = await Promise.all(routes.map((route) => readFile(new URL(`research/${route}/index.html`, outputRoot), "utf8")));
   for (const [index, html] of pages.entries()) {
     assert.match(html, new RegExp(`https:\\/\\/thooomasqian\\.github\\.io\\/research\\/${routes[index]}\\/`));
@@ -61,7 +62,7 @@ test("every research project has a pre-rendered detail page", async () => {
   assert.match(pages[1], /335/);
   assert.match(pages[2], /450,141/);
   assert.match(pages[3], /known-free violations/);
-  assert.match(pages[4], /401/);
-  assert.match(pages[5], /18\.74/);
-  assert.match(pages[5], /one million rays/);
+  assert.match(pages[4], /18\.74/);
+  assert.match(pages[4], /one million rays/);
+  await assert.rejects(access(new URL("research/pdp-diffusion/index.html", outputRoot)));
 });
