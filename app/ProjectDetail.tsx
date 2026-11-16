@@ -13,7 +13,7 @@ export function ProjectDetail({ project }: { project: ResearchProject }) {
       <nav className="top-nav">
         <div className="nav-inner">
           <a className="brand" href="/">Guanyue Qian</a>
-          <div className="nav-links"><a href="/#about">About</a><a href="/#research">Research</a><a href="/#publications">Publications</a><a href="/#honors">Honors</a><a href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">CV</a></div>
+          <div className="nav-links"><a href="/#about">About</a><a href="/#research">Research</a><a href="/#publications">Publications</a><a href="/#honors">Honors</a></div>
         </div>
       </nav>
 

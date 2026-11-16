@@ -44,15 +44,6 @@ const publicationRecords: readonly Publication[] = [
     href: "https://arxiv.org/abs/2610.03887",
   },
   {
-    index: "C4",
-    year: "2027",
-    authors: "A. Armouti, <b>G. Qian</b>, and R. Nandakumar",
-    title: "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
-    venue: "International Conference on Learning Representations (ICLR)",
-    status: "Under review",
-    href: "https://arxiv.org/abs/2611.08342",
-  },
-  {
     index: "C5",
     year: "2026",
     authors: "M. Ying, <b>G. Qian</b>, X. Wang, P. Ma, D. Shakya, and T. S. Rappaport",
