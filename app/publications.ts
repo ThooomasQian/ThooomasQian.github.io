@@ -1,10 +1,12 @@
+import { radarSplattingPublication } from "./4dps";
+
 type Publication = {
   index: string;
   year: string;
   authors: string;
   title: string;
   venue: string;
-  status: "Published" | "Accepted" | "Under review";
+  status: "Published" | "Accepted" | "Under review" | "Preprint";
   href?: string;
 };
 
@@ -43,6 +45,7 @@ const publicationRecords: readonly Publication[] = [
     status: "Published",
     href: "https://arxiv.org/abs/2610.03887",
   },
+  radarSplattingPublication,
   {
     index: "C5",
     year: "2026",

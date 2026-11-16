@@ -1,3 +1,5 @@
+import { radarSplattingProject } from "./4dps";
+
 export type ProjectMetric = {
   value: string;
   label: string;
@@ -36,6 +38,7 @@ export type ResearchProject = {
 };
 
 const projectRecords: readonly ResearchProject[] = [
+  radarSplattingProject,
   {
     slug: "horama",
     index: "01",
@@ -245,6 +248,7 @@ const projectRecords: readonly ResearchProject[] = [
 
 export const projects: readonly ResearchProject[] = [
   "horama",
+  "radar-splatting",
   "horama-l",
   "nyuray-intelligence",
 ].map((slug) => {

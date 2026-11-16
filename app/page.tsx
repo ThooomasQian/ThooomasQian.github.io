@@ -2,14 +2,17 @@
 import type { ResearchProject } from "./projects";
 import { projects } from "./projects";
 import { publications } from "./publications";
+import { radarSplattingNews } from "./4dps";
 
 const bySlug = new Map(projects.map((project) => [project.slug, project]));
 
 const researchGroups = [
   { title: "Wireless Digital Twins & Ray Tracing", slugs: ["horama", "horama-l", "nyuray-intelligence"] },
+  { title: "Differentiable Sensing", slugs: ["radar-splatting"] },
 ] as const;
 
 const news = [
+  radarSplattingNews,
   ["Oct. 2026", "PRIMO study on joint beamforming and RIS deployment accepted at the Asilomar Conference."],
   ["Sept. 2026", "SPARC sparse path-aware calibration accepted at IEEE GLOBECOM 2026."],
   ["May 2026", "Received the Myron M. Rosenthal Merit Award."],
@@ -19,7 +22,7 @@ const news = [
 
 const experience = [
   { title: "Researcher · NYU WIRELESS", date: "Feb. 2025 – Present", detail: "Brooklyn, NY · Wireless digital twins, site-specific ray tracing, and channel measurement with Prof. Theodore S. Rappaport." },
-  { title: "Visiting Researcher · Cornell Tech", date: "Jun. 2026 – Sept. 2026", detail: "New York, NY · Wireless sensing research with Prof. Rajalakshmi Nandakumar." },
+  { title: "Visiting Researcher · Cornell Tech", date: "Jun. 2026 – Sept. 2026", detail: "New York, NY · Differentiable mmWave radar rendering for human sensing with Prof. Rajalakshmi Nandakumar." },
   { title: "Teaching Assistant · NYU MakerSpace", date: "Jan. 2025 – Dec. 2025", detail: "Led fabrication workshops (3D printing, laser cutting, water-jet machining) and mentored interdisciplinary teams from concept to prototype." },
   { title: "Assistant Baseband Engineer · Quectel", date: "Jun. 2024 – Aug. 2024", detail: "Shanghai · Designed schematics and 13-layer PCB layouts for 5G automotive IoT modules and an automotive RF/baseband test board." },
 ] as const;
@@ -50,7 +53,7 @@ export default function Home() {
         <div className="nav-inner">
           <a className="brand" href="#about">Guanyue Qian</a>
           <div className="nav-links">
-            <a href="#about">About</a><a href="#news">News</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#honors">Honors</a><a href="#service">Service</a>
+            <a href="#about">About</a><a href="#news">News</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#research">Research</a><a href="#publications">Publications</a><a href="#honors">Honors</a><a href="#service">Service</a><a href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">CV</a>
           </div>
         </div>
       </nav>
@@ -62,9 +65,9 @@ export default function Home() {
             <h1>Guanyue Qian</h1>
             <div className="role">B.S. Candidate in Electrical Engineering, <a href="https://www.nyu.edu/" target="_blank" rel="noreferrer">New York University</a></div>
             <p>I am an undergraduate researcher at <a href="https://wireless.engineering.nyu.edu/" target="_blank" rel="noreferrer">NYU WIRELESS</a>, advised by <a href="https://wireless.engineering.nyu.edu/tedrappaport/" target="_blank" rel="noreferrer">Prof. Theodore S. Rappaport</a>, and spent summer 2026 at Cornell Tech with <a href="https://tech.cornell.edu/people/rajalakshmi-nandakumar/" target="_blank" rel="noreferrer">Prof. Rajalakshmi Nandakumar</a>. My research combines physical modeling, measurement, and machine learning to help wireless systems both predict and perceive the physical world.</p>
-            <p>Research interests: wireless ray tracing, 3D reconstruction and digital twins, wireless sensing, and upper mid-band channel measurement and modeling.</p>
+            <p>Research interests: wireless ray tracing, 3D reconstruction and digital twins, differentiable radar rendering, and upper mid-band channel measurement and modeling.</p>
             <p><strong>I am applying to Ph.D. programs and research opportunities in wireless systems, sensing, and machine learning.</strong></p>
-            <div className="contact">Email: <a href="mailto:gq2032@nyu.edu">gq2032@nyu.edu</a><br /><a href="https://scholar.google.com/citations?hl=en&user=ZR0V8iQAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a><span className="sep">/</span><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn</a></div>
+            <div className="contact">Email: <a href="mailto:gq2032@nyu.edu">gq2032@nyu.edu</a><br /><a href="/Guanyue-Qian-CV.pdf" target="_blank" rel="noreferrer">CV</a><span className="sep">/</span><a href="https://scholar.google.com/citations?hl=en&user=ZR0V8iQAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a><span className="sep">/</span><a href="https://www.linkedin.com/in/guanyue-qian/" target="_blank" rel="noreferrer">LinkedIn</a></div>
           </div>
         </section>
 

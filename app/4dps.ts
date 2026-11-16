@@ -1,13 +1,12 @@
-// Retained for restoration; this module is not imported by the website.
-import type { ResearchProject } from "../app/projects";
+import type { ResearchProject } from "./projects";
 
-export const archived4DPSProject: ResearchProject = {
+export const radarSplattingProject: ResearchProject = {
     slug: "radar-splatting",
     index: "02",
     kicker: "4D POINT SPLATTING",
     title: "4D Point Splatting for mmWave radar micro-Doppler.",
     lede: "4DPS fits an explicit moving scene to a real radar capture, rendering raw complex returns that can be processed into any downstream radar representation. It fits moving human bodies to real radar captures, making dataset-scale inverse rendering of mmWave radar possible for the first time.",
-    status: "Under review · ICLR 2027",
+    status: "arXiv preprint · 2026",
     period: "Jun. 2026 – Sept. 2026",
     accent: "#52d8b8",
     image: "/media/4dps-pipeline.png",
@@ -42,14 +41,14 @@ export const archived4DPSProject: ResearchProject = {
     links: [{ label: "Read the 4DPS paper", href: "https://arxiv.org/abs/2611.08342" }],
   };
 
-export const archived4DPSPublication = {
+export const radarSplattingPublication = {
     index: "C4",
-    year: "2027",
+    year: "2026",
     authors: "A. Armouti, <b>G. Qian</b>, and R. Nandakumar",
     title: "4D Point Splatting for mmWave Radar Micro-Doppler Differentiable Rendering",
-    venue: "International Conference on Learning Representations (ICLR)",
-    status: "Under review",
+    venue: "arXiv:2611.08342",
+    status: "Preprint",
     href: "https://arxiv.org/abs/2611.08342",
   } as const;
 
-export const archived4DPSNews = ["Nov. 2026", "4D Point Splatting for mmWave radar micro-Doppler released as an arXiv preprint and submitted to ICLR 2027."] as const;
+export const radarSplattingNews = ["Nov. 2026", "4D Point Splatting for mmWave radar micro-Doppler released as an arXiv preprint."] as const;
