@@ -20,7 +20,7 @@ test("home page is pre-rendered as a compact academic profile", async () => {
   assert.match(html, /research\/radar-splatting\//);
   assert.match(html, /arxiv\.org\/abs\/2611\.08342/);
   assert.match(html, /arXiv preprint · 2026/);
-  assert.match(html, /href="\/Guanyue-Qian-CV\.pdf"/);
+  assert.match(html, /href="\/Guanyue-Qian-CV\.pdf\?v=20261118"/);
   assert.match(html, /arxiv\.org\/abs\/2610\.03887/);
   assert.match(html, /arxiv\.org\/abs\/2609\.06077/);
   assert.match(html, /ieeexplore\.ieee\.org\/document\/11309979/);
@@ -67,6 +67,7 @@ test("every research project has a pre-rendered detail page", async () => {
     assert.match(html, /Method/);
     assert.match(html, /Results/);
     assert.match(html, /Resources/);
+    assert.match(html, /href="\/Guanyue-Qian-CV\.pdf\?v=20261118"/);
     assert.doesNotMatch(html, /<!--app-html-->/);
   }
   assert.match(pages[0], /phone scan to a radio-ready digital twin/);
@@ -90,6 +91,13 @@ test("every research project has a pre-rendered detail page", async () => {
   assert.doesNotMatch(pages[3], /under review|submitted|submission/i);
   await assert.rejects(access(new URL("research/geometry-completion/index.html", outputRoot)));
   await assert.rejects(access(new URL("research/pdp-diffusion/index.html", outputRoot)));
+});
+
+test("CV download preserves the latest source PDF without modification", async () => {
+  const source = await readFile(new URL("../public/Guanyue-Qian-CV.pdf", import.meta.url));
+  const deployed = await readFile(new URL("Guanyue-Qian-CV.pdf", outputRoot));
+  assert.equal(source.subarray(0, 5).toString(), "%PDF-");
+  assert.ok(deployed.equals(source), "the deployed CV must be byte-for-byte identical to the supplied PDF");
 });
 
 test("restored 4DPS is listed as a preprint with no review venue in deployed content", async () => {
